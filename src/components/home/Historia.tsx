@@ -1,16 +1,15 @@
 import { images } from '../../assets/images'
+import { useCopy } from '../../i18n/LanguageContext'
+import Lines from '../../i18n/Lines'
 import Seal from '../ds/Seal'
 import Reveal from '../Reveal'
 
 export default function Historia() {
+  const t = useCopy().historia
   return (
     <section className="historia">
       <div className="historia__media">
-        <img
-          className="historia__img"
-          src={images.clasico}
-          alt="El Clásico de Siempre sobre la tabla"
-        />
+        <img className="historia__img" src={images.clasico} alt={t.imgAlt} />
       </div>
       <div className="historia__panel">
         <div className="historia__seal">
@@ -18,19 +17,11 @@ export default function Historia() {
         </div>
         <Reveal>
           <h2 className="historia__title">
-            Nos trajimos
-            <br />
-            la receta de casa.
+            <Lines lines={t.title} />
           </h2>
-          <p className="historia__p1">
-            Acá faltaba el alfajor de verdad, así que lo hacemos nosotros: en tandas chicas, con el
-            dulce de leche que corresponde, como se hace allá.
-          </p>
-          <p className="historia__p2">
-            Cada uno se rellena, se baña y se envuelve a mano. El sticker también lo ponemos uno por
-            uno.
-          </p>
-          <div className="historia__sig">Familia PATRIA · Israel</div>
+          <p className="historia__p1">{t.p1}</p>
+          <p className="historia__p2">{t.p2}</p>
+          <div className="historia__sig">{t.sig}</div>
         </Reveal>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import { PRICE_PLACEHOLDER } from '../../config/site'
 import { WA_MESSAGES } from '../../config/whatsapp'
 import type { Flavour } from '../../data/flavours'
+import { localizeFlavour, useCopy, useLanguage } from '../../i18n/LanguageContext'
 import FlavourDot from '../ds/FlavourDot'
 import Reveal from '../Reveal'
 import WhatsAppIcon from '../WhatsAppIcon'
@@ -12,7 +13,11 @@ interface FlavourArticleProps {
 }
 
 /** One flavour on /sabores. Items alternate between a full-bleed and an inset composition. */
-export default function FlavourArticle({ flavour: f, index: i }: FlavourArticleProps) {
+export default function FlavourArticle({ flavour, index: i }: FlavourArticleProps) {
+  const { lang } = useLanguage()
+  const t = useCopy().sabores
+  // Shown name/description follow the language; the WhatsApp message keeps the Spanish name (business logic unchanged).
+  const f = localizeFlavour(flavour, lang)
   const end = i % 2 !== 0
   return (
     <Reveal>
@@ -31,8 +36,8 @@ export default function FlavourArticle({ flavour: f, index: i }: FlavourArticleP
             <span className="price" dir="ltr">
               {PRICE_PLACEHOLDER}
             </span>
-            <WhatsAppLink message={WA_MESSAGES.flavour(f.name)} className="waminor">
-              <WhatsAppIcon size={13} /> Pedir este
+            <WhatsAppLink message={WA_MESSAGES.flavour(flavour.name)} className="waminor">
+              <WhatsAppIcon size={13} /> {t.buy}
             </WhatsAppLink>
           </div>
         </div>

@@ -12,9 +12,10 @@ import Pedido from '../components/home/Pedido'
 import PrimeraVez from '../components/home/PrimeraVez'
 import Prueba from '../components/home/Prueba'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
+import { useCopy } from '../i18n/LanguageContext'
 
 export default function HomePage() {
-  useDocumentTitle('PATRIA · Alfajores argentinos')
+  useDocumentTitle(useCopy().meta.homeTitle)
   return (
     <div>
       <HomeHeader />

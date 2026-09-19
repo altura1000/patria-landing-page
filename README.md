@@ -40,7 +40,13 @@ Breakpoints (plain CSS media queries, no JS viewport detection): **mobile < 640p
 
 ## Language control
 
-ES/HE is visual only, as in the approved design. No Hebrew copy exists yet, and choosing HE does not change content or direction. State lives in `src/i18n/LanguageContext.tsx`.
+The ES / עב switch swaps the whole site between Spanish (`<html lang="es" dir="ltr">`, the default and the approved design) and Hebrew (`<html lang="he" dir="rtl">`).
+
+- **State:** `src/i18n/LanguageContext.tsx` (`useLanguage()`, `useCopy()`). It also sets `<html lang dir>` on every change. The choice is not persisted: a reload starts in Spanish.
+- **Copy:** every user-facing string lives in `src/i18n/translations.ts` (`es` and `he`, both typed as `Copy`, so a missing key fails `npm run typecheck`). Hebrew lines that a native speaker should still check are tagged `// REVIEW`. Hebrew flavour names/descriptions come from the design-system kit.
+- **Layout:** the CSS is written with logical properties, so `dir="rtl"` mirrors most layouts by itself. `src/styles/rtl.css` (scoped to `[dir="rtl"]`, so it never touches Spanish) holds only the Hebrew extras: fonts, tracking/italics, +1px optical size for tiny labels, and the few physical left/right values. Photos are repositioned, never flipped.
+- **Fonts:** Hebrew display = Frank Ruhl Libre (`--font-display-he`), Hebrew body/UI = Assistant (`--font-body-he` / `--font-label`). In RTL, `--font-display` and `--font-statement` are remapped to Frank Ruhl Libre; the Latin PATRIA wordmark stays in Bodoni Moda.
+- **WhatsApp:** links and their pre-filled messages are identical in both languages (`src/config/whatsapp.ts` is unchanged).
 
 ## Original references (kept, not part of the build)
 

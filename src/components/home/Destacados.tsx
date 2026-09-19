@@ -1,41 +1,31 @@
 import { Link } from 'react-router-dom'
 import { PRICE_PLACEHOLDER } from '../../config/site'
 import { getFlavour } from '../../data/flavours'
+import { localizeFlavour, useCopy, useLanguage } from '../../i18n/LanguageContext'
+import Lines from '../../i18n/Lines'
 import Eyebrow from '../ds/Eyebrow'
 import Reveal from '../Reveal'
 
-/** The three homepage highlights: flavour id, short label and homepage-specific blurb. */
-const HIGHLIGHTS = [
-  {
-    id: 'clasico',
-    label: 'El Clásico',
-    blurb: 'Dulce de leche espeso entre dos tapas de chocolate negro, cubierto entero.',
-  },
-  {
-    id: 'bon-bon',
-    label: 'Bon Bon',
-    blurb: 'Tapas claras de maicena, dulce bien cargado, baño de chocolate con leche.',
-  },
-  {
-    id: 'halva',
-    label: 'Halva',
-    blurb: 'Hilos de halva y sésamo tostado sobre el dulce, en chocolate blanco.',
-  },
-]
+/** The three homepage highlights, in display order (label + blurb come from i18n/translations.ts). */
+const HIGHLIGHT_IDS = ['clasico', 'bon-bon', 'halva'] as const
 
 export default function Destacados() {
-  const [main, ...others] = HIGHLIGHTS.map((h) => ({ ...h, flavour: getFlavour(h.id) }))
+  const { lang } = useLanguage()
+  const t = useCopy().destacados
+  const [main, ...others] = HIGHLIGHT_IDS.map((id) => ({
+    id,
+    ...t.highlights[id],
+    flavour: localizeFlavour(getFlavour(id), lang),
+  }))
   return (
     <section id="sabores" className="dest">
       <div className="dest__inner">
         <div className="dest__head">
-          <Eyebrow>Nuestros sabores</Eyebrow>
+          <Eyebrow>{t.eyebrow}</Eyebrow>
           <h2 className="dest__title">
-            Tres para
-            <br />
-            empezar.
+            <Lines lines={t.title} />
           </h2>
-          <p className="dest__sub">Los que más nos piden. Hay cinco más esperando en la carta.</p>
+          <p className="dest__sub">{t.sub}</p>
         </div>
         <Reveal className="dest__row-reveal">
           <div className="dest__row">
@@ -63,7 +53,7 @@ export default function Destacados() {
         </Reveal>
         <div className="dest__foot">
           <Link to="/sabores" className="waminor" style={{ borderColor: 'var(--choc-700)' }}>
-            Ver todos los sabores →
+            {t.seeAll}
           </Link>
           <span className="price" dir="ltr" style={{ fontSize: '17px' }}>
             {PRICE_PLACEHOLDER}

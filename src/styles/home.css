@@ -134,6 +134,7 @@
 /* ---------- Manifiesto ---------- */
 .manifiesto{padding-block:44px 40px}
 .manifiesto__text{margin:0;font-family:var(--font-statement);font-weight:500;font-size:26px;line-height:1.15;color:var(--choc-700);letter-spacing:-.01em;text-wrap:balance}
+.manifiesto__em{font-style:italic;color:var(--dulce-600)}
 .manifiesto__sig{display:flex;align-items:center;gap:14px;margin-block-start:26px}
 .manifiesto__sig-label{font-family:var(--font-label);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-600)}
 @media (min-width:640px){

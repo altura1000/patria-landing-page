@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { WA_MESSAGES } from '../../config/whatsapp'
 import { heroHeight } from '../../hooks/useHeroHeight'
+import { useCopy } from '../../i18n/LanguageContext'
 import WhatsAppIcon from '../WhatsAppIcon'
 import WhatsAppLink from '../WhatsAppLink'
 
 /** Floating PEDIR button: appears once the hero is scrolled past, hides once the closing CTA is in view. */
 export default function FloatingOrderButton() {
+  const t = useCopy().floating
   const [show, setShow] = useState(false)
   useEffect(() => {
     const update = () => {
@@ -22,7 +24,7 @@ export default function FloatingOrderButton() {
     <WhatsAppLink
       message={WA_MESSAGES.order}
       className="float-order"
-      aria-label="Quiero probar, por WhatsApp"
+      aria-label={t.aria}
       aria-hidden={!show}
       tabIndex={show ? 0 : -1}
       style={{
@@ -31,7 +33,7 @@ export default function FloatingOrderButton() {
         pointerEvents: show ? 'auto' : 'none',
       }}
     >
-      <WhatsAppIcon size={15} /> Quiero probar
+      <WhatsAppIcon size={15} /> {t.label}
     </WhatsAppLink>
   )
 }

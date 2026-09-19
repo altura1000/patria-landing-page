@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import { images } from '../../assets/images'
+import { useCopy } from '../../i18n/LanguageContext'
 
 interface SealProps {
   size?: number
@@ -16,10 +17,11 @@ export default function Seal({
   shadow = true,
   style,
 }: SealProps) {
+  const { sealAlt } = useCopy().ui
   return (
     <img
       src={src}
-      alt="PATRIA — Orgullo Argentino"
+      alt={sealAlt}
       width={size}
       height={size}
       style={{

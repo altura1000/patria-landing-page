@@ -1,34 +1,33 @@
 import { WA_MESSAGES } from '../../config/whatsapp'
+import { useCopy } from '../../i18n/LanguageContext'
 import Eyebrow from '../ds/Eyebrow'
 import FlavourDot, { type FlavourKey } from '../ds/FlavourDot'
 import WhatsAppIcon from '../WhatsAppIcon'
 import WhatsAppLink from '../WhatsAppLink'
 
-const FAVOURITES: [label: string, dot: FlavourKey][] = [
-  ['Clásico', 'chocolate'],
-  ['Bon Bon', 'dulce'],
-  ['Halva', 'halva'],
-]
+/** Dot colour per favourite, in the same order as `primera.favourites` in i18n/translations.ts. */
+const FAVOURITE_DOTS: FlavourKey[] = ['chocolate', 'dulce', 'halva']
 
 export default function PrimeraVez() {
+  const t = useCopy().primera
   return (
     <section className="px primera">
       <div>
-        <Eyebrow>Para empezar</Eyebrow>
-        <h2 className="primera__title">¿Primera vez?</h2>
-        <p className="primera__sub">Empezá por nuestros tres favoritos y después seguís explorando.</p>
+        <Eyebrow>{t.eyebrow}</Eyebrow>
+        <h2 className="primera__title">{t.title}</h2>
+        <p className="primera__sub">{t.sub}</p>
       </div>
       <div>
         <div className="primera__list">
-          {FAVOURITES.map(([label, dot]) => (
-            <span key={label} className="primera__item">
-              <FlavourDot flavour={dot} size={9} />
+          {t.favourites.map((label, i) => (
+            <span key={i} className="primera__item">
+              <FlavourDot flavour={FAVOURITE_DOTS[i]} size={9} />
               {label}
             </span>
           ))}
         </div>
         <WhatsAppLink message={WA_MESSAGES.firstTime} className="wabtn primera__cta">
-          <WhatsAppIcon /> Quiero probarlos
+          <WhatsAppIcon /> {t.cta}
         </WhatsAppLink>
       </div>
     </section>
