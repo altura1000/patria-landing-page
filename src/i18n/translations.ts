@@ -141,7 +141,7 @@ const es: Copy = {
     title: 'Nuestros clientes',
     review: { before: 'Reseña real de cliente ', after: ' — a insertar' },
     reviewBy: 'Nombre · fuente',
-    instaLabel: 'Desde Instagram',
+    instaLabel: 'En sus historias',
     instaPost: 'Post real',
   },
   primera: {
@@ -258,7 +258,7 @@ const he: Copy = {
     title: 'הלקוחות שלנו', // REVIEW
     review: { before: 'ביקורת אמיתית של לקוח ', after: ' — להוספה' }, // placeholder
     reviewBy: 'שם · מקור', // placeholder
-    instaLabel: 'מאינסטגרם', // REVIEW
+    instaLabel: 'מהסטוריז שלכם', // REVIEW
     instaPost: 'פוסט אמיתי', // placeholder
   },
   primera: {

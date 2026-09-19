@@ -256,36 +256,65 @@
 .prueba{background:var(--cream-100);border-block-start:1px solid var(--border-hairline);padding-block:42px 38px}
 .prueba__head{padding-inline:var(--pad);padding-block-end:18px}
 .prueba__title{font-family:var(--font-statement);font-size:28px;font-weight:600;margin-block-start:10px}
-.prueba .rail{padding-inline:var(--pad)}
-.review{width:276px;margin:0;display:grid;gap:14px}
+.prueba .rail{display:grid;grid-template-columns:minmax(0,1fr);justify-items:start;gap:22px;overflow:visible;scroll-snap-type:none;padding-inline:var(--pad)}
+.review{margin:0;display:grid;align-content:start;gap:14px;max-width:100%}
 .review__quote{font-family:var(--font-display);font-size:42px;line-height:.6;color:var(--gold-500)}
-.review__body{min-height:104px;display:grid;place-items:center;background:rgba(255,255,255,.4)}
-.review__by{display:flex;align-items:center;gap:10px}
-.review__avatar{width:32px;height:32px;border-radius:50%;border:1px dashed rgba(74,42,23,.3)}
-.review__name{font-family:var(--font-label);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted)}
+.review__shot{display:block;max-width:100%;height:auto;background:#fff;border:1px solid var(--border-hairline);border-radius:var(--radius-sm)}
 .insta{margin-block-start:34px}
 .insta__label{padding:0 var(--pad) 10px;font-family:var(--font-label);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--choc-600)}
-.insta__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
-.insta__cell{aspect-ratio:1/1;display:grid;place-items:center;font-size:9.5px;letter-spacing:.08em;border:1px dashed rgba(74,42,23,.26)}
+.insta__grid{display:flex;gap:10px;overflow-x:auto;padding-inline:var(--pad);scroll-padding-inline:var(--pad);scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.insta__grid::-webkit-scrollbar{display:none}
+.insta__story{flex:0 0 clamp(132px,40vw,200px);width:clamp(132px,40vw,200px);height:auto;display:block;scroll-snap-align:start;border-radius:var(--radius-sm)}
 @media (min-width:640px){
   .prueba{padding-block:64px 56px}
   .prueba__title{font-size:36px}
-  .review{width:320px}
-  .review__body{min-height:130px}
+  .prueba .rail{grid-template-columns:333fr 353fr;gap:20px;max-width:calc(706px + 2*var(--pad));justify-items:stretch}
+  .review__shot{width:100%}
   .insta{margin-block-start:44px}
-  .insta__grid{gap:6px}
+  .insta__grid{display:grid;grid-template-columns:repeat(3,minmax(0,220px));gap:14px;overflow:visible;scroll-snap-type:none}
+  .insta__story{width:100%}
 }
 @media (min-width:1024px){
   .prueba{padding-block:clamp(88px,8vw,128px)}
-  .prueba__inner{display:grid;grid-template-columns:7fr 5fr;grid-template-areas:"head head" "reviews insta";column-gap:clamp(48px,6vw,96px);row-gap:44px;max-width:calc(var(--content-max) + 2*var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+  .prueba__inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"head head" "reviews insta";column-gap:clamp(48px,6vw,96px);row-gap:44px;max-width:calc(var(--content-max) + 2*var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
   .prueba__head{grid-area:head;padding:0}
   .prueba__title{font-size:clamp(36px,3.4vw,48px)}
-  .prueba .rail{grid-area:reviews;display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:0;overflow:visible}
-  .review{width:auto}
-  .review__body{min-height:150px}
+  .prueba .rail{grid-area:reviews;align-self:start;max-width:none;padding:calc(42px*.6) 0 0}
+  /* No quote marks over the screenshots on desktop; the padding above is the row they used to occupy, so the screenshots stay where they were. */
+  .review__quote{display:none}
+  .review__shot,.insta__story{box-shadow:0 4px 16px rgba(40,20,10,.07)}
   .insta{grid-area:insta;margin:0}
   .insta__label{padding-inline:0}
-  .insta__grid{gap:8px}
+  .insta__grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding-inline:0}
+}
+@media (min-width:1280px){
+  /* Wider row so the message screenshots can be large. The Stories column keeps exactly the width it had in the
+     1240px content column (7/11 of it), so client1-3 stay the same size. */
+  .prueba__inner{grid-template-columns:minmax(0,1fr) calc((min(100% - 2*(var(--gutter) - 24px),var(--content-max)) - clamp(48px,6vw,96px))*7/11);column-gap:40px;max-width:calc(1511px + 48px);padding-inline:24px}
+  /* Both messages the same height: column widths follow the screenshots' natural ratios (333x437, 353x372). */
+  /* 22px between the screenshots; the rail grows 8px into the column gap (22 - the previous 14) so both screenshots keep their size. */
+  .prueba .rail{grid-template-columns:762fr 949fr;gap:22px;margin-inline-end:-8px}
+  .review{gap:0}
+  .review__shot{object-fit:contain}
+}
+/* Mobile only (<640px): both proof rows are native swipe carousels (scroll-snap, no JS) with the next card peeking in.
+   The vertical padding/negative margin pairs give the card shadows room inside the scroller without adding layout height. */
+@media (max-width:639px){
+  /* One rhythm for both proof rails (messages + Stories): the same card width, gap and side padding, so the next card
+     peeks in by the same amount and both rails sit on the same grid. Change them here, once. */
+  .prueba{--rail-card-w:min(72vw,340px);--rail-gap:12px}
+  .prueba .rail,.insta__grid{gap:var(--rail-gap);padding-inline:var(--pad);scroll-padding-inline:var(--pad)}
+  /* The vertical padding/negative margin pairs give the card shadows room inside the scrollers without adding layout height. */
+  .prueba .rail{display:flex;align-items:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-block:14px 22px;margin-block:-14px -22px}
+  .prueba .rail::-webkit-scrollbar{display:none}
+  /* Equal-height message cards: every slide is as tall as message1 (333x437) at this width (the -2px/+2px is the hairline border),
+     and the screenshot sits top-aligned inside it, contained, so message2 is neither stretched nor cropped. */
+  .prueba .rail>.review{flex:0 0 auto;box-sizing:border-box;position:relative;overflow:hidden;width:var(--rail-card-w);height:calc((var(--rail-card-w) - 2px)*437/333 + 2px);background:#fff;border:1px solid var(--border-hairline);border-radius:var(--radius-sm);box-shadow:0 4px 16px rgba(40,20,10,.07);scroll-snap-align:start}
+  .review__quote{display:none}
+  .review__shot{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:top;border:0;border-radius:0;background:none}
+  .insta{margin-block-start:26px}
+  .insta__grid{align-items:flex-start;padding-block:14px 22px;margin-block:0 -22px}
+  .insta__story{flex:0 0 auto;width:var(--rail-card-w);box-shadow:0 4px 16px rgba(40,20,10,.07)}
 }
 
 /* ---------- Primera vez ---------- */

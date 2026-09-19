@@ -1,7 +1,8 @@
 import { useCopy } from '../../i18n/LanguageContext'
+import { images } from '../../assets/images'
 import Eyebrow from '../ds/Eyebrow'
 
-/** Social proof. The dashed placeholders are part of the approved design — real reviews/posts to be inserted. */
+/** Social proof: real (anonymous) customer message screenshots, then real customer Instagram Stories. */
 export default function Prueba() {
   const t = useCopy().prueba
   return (
@@ -12,28 +13,18 @@ export default function Prueba() {
           <h2 className="prueba__title">{t.title}</h2>
         </div>
         <div className="rail">
-          {[1, 2].map((n) => (
-            <figure key={n} className="review">
+          {[images.message1, images.message2].map((src, i) => (
+            <figure key={i} className="review">
               <span className="review__quote">“</span>
-              <div className="ph review__body">
-                {t.review.before}
-                {n}
-                {t.review.after}
-              </div>
-              <figcaption className="review__by">
-                <div className="review__avatar" />
-                <span className="review__name">{t.reviewBy}</span>
-              </figcaption>
+              <img className="review__shot" src={src} alt={`${t.title} ${i + 1}`} width={i === 0 ? 333 : 353} height={i === 0 ? 437 : 372} decoding="async" />
             </figure>
           ))}
         </div>
         <div className="insta">
           <div className="insta__label">{t.instaLabel}</div>
           <div className="insta__grid">
-            {[1, 2, 3].map((n) => (
-              <div key={n} className="ph insta__cell">
-                {t.instaPost}
-              </div>
+            {[images.client1, images.client2, images.client3].map((src, i) => (
+              <img key={i} className="insta__story" src={src} alt={`${t.instaLabel} ${i + 1}`} width={540} height={950} loading="lazy" decoding="async" />
             ))}
           </div>
         </div>
