@@ -228,7 +228,7 @@
 .arte__point{display:flex;gap:16px;align-items:baseline;padding-block:14px}
 .arte__point+.arte__point{border-block-start:1px solid var(--border-hairline)}
 .arte__num{font-family:var(--font-display);font-size:13px;color:var(--gold-600)}
-.arte__pt-title{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--text-strong)}
+.arte__pt-title{font-family:var(--font-statement);font-size:20px;font-weight:600;color:var(--text-strong)}
 .arte__pt-text{font-size:15px;color:var(--text-muted);line-height:1.5}
 @media (min-width:640px){
   .arte{padding-block:88px 80px}
@@ -254,7 +254,7 @@
 /* ---------- Prueba: reviews + Instagram ---------- */
 .prueba{background:var(--cream-100);border-block-start:1px solid var(--border-hairline);padding-block:42px 38px}
 .prueba__head{padding-inline:var(--pad);padding-block-end:18px}
-.prueba__title{font-size:28px;font-weight:600;margin-block-start:10px}
+.prueba__title{font-family:var(--font-statement);font-size:28px;font-weight:600;margin-block-start:10px}
 .prueba .rail{padding-inline:var(--pad)}
 .review{width:276px;margin:0;display:grid;gap:14px}
 .review__quote{font-family:var(--font-display);font-size:42px;line-height:.6;color:var(--gold-500)}
@@ -289,7 +289,7 @@
 
 /* ---------- Primera vez ---------- */
 .primera{background:var(--cream-200);padding-block:42px 40px}
-.primera__title{font-size:34px;font-weight:600;line-height:1.02;margin-block-start:12px}
+.primera__title{font-family:var(--font-statement);font-size:34px;font-weight:600;line-height:1.02;margin-block-start:12px}
 .primera__sub{margin:12px 0 0;font-size:16px;line-height:1.55;color:var(--text-muted);max-width:30ch}
 .primera__list{display:flex;gap:16px;flex-wrap:wrap;margin-block:18px 22px}
 .primera__item{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:19px;font-weight:600;color:var(--text-strong)}
@@ -314,7 +314,7 @@
 .steps{margin-block-start:26px}
 .step{display:flex;gap:18px;align-items:baseline;padding-block:16px;border-block-start:1px solid var(--border-hairline)}
 .step__n{font-family:var(--font-display);font-size:28px;font-weight:600;color:var(--dulce-500);line-height:1}
-.step__t{font-family:var(--font-display);font-size:21px;font-weight:600;color:var(--text-strong)}
+.step__t{font-family:var(--font-statement);font-size:21px;font-weight:600;color:var(--text-strong)}
 .step__d{font-size:15px;color:var(--text-muted);line-height:1.5;margin-block-start:2px}
 .pedido__note{text-align:start;line-height:1.8;margin-block-start:22px;letter-spacing:.1em}
 @media (min-width:640px){
