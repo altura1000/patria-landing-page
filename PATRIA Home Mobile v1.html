@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>PATRIA · Alfajores argentinos — Home mobile</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/colors.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/typography.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/motion.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/base.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/styles.css">
+<style>
+html{background:#2A1A10}
+body{background:#2A1A10;display:flex;justify-content:center;min-height:100vh}
+#root{width:390px;max-width:100%;background:var(--cream-100);box-shadow:0 0 0 1px rgba(0,0,0,.35)}
+.px{padding-inline:20px}
+.sec{padding-block:44px}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-inline:20px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{scroll-snap-align:start;flex:0 0 auto}
+.ph{border:1px dashed rgba(74,42,23,.32);background:rgba(74,42,23,.035);color:var(--text-muted);font-family:var(--font-label);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:14px 12px;border-radius:var(--radius-sm)}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+a{border-bottom:0}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/_ds_bundle.js"></script>
+<script type="text/babel">
+const {Button,Eyebrow,Badge,Rule,Seal,FlavourDot,Tag,LangSwitch}=window.PATRIADesignSystem_5cb717;
+
+const WA=({size=17,color="currentColor"})=>(
+  <svg width={size} height={size} viewBox="0 0 24 24" fill={color} aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.19-.31a8.24 8.24 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.79.97-.14.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.16 1.72 2.75 4.19 3.75.58.25 1.04.4 1.4.51.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.22-.18-.47-.31z"/></svg>);
+
+const FLAVOURS=[
+ {id:'clasico',name:'El Clásico de Siempre',img:'assets/clasico.png',desc:'Dos tapas de chocolate negro, dulce de leche espeso en el medio y cobertura entera. El de siempre.',dots:['dulce','chocolate'],badge:'El más pedido'},
+ {id:'bon-bon',name:'Bon Bon',img:'assets/bon-bon.png',desc:'Dulce de leche bien cargado entre tapas claras de maicena, bañado todo en chocolate con leche.',dots:['dulce','chocolate']},
+ {id:'halva',name:'Dulce de Leche & Halva',img:'assets/halva.png',desc:'Dulce de leche con hilos de halva y sésamo tostado, cubierto en chocolate blanco.',dots:['dulce','halva','blanco']},
+ {id:'frutos-rojos',name:'Dulce de Leche & Frutos Rojos',img:'assets/frutos-rojos.png',desc:'Dulce de leche y compota de frutos rojos entre tapas de cacao, con baño de chocolate con leche.',dots:['dulce','frutosRojos']}
+];
+const MORE=[
+ {id:'malbec',name:'Malbec',img:'assets/malbec.png',desc:'Chocolate negro y reducción de Malbec.',dots:['malbec','chocolate']},
+ {id:'alfadubai',name:'AlfaDubai',img:'assets/alfadubai.png',desc:'Pistacho y kadaif crocante.',dots:['pistacho','chocolate']},
+ {id:'blanut',name:'BlaNut',img:'assets/blanut.png',desc:'Nuez y crema, cobertura blanca.',dots:['nuez','blanco']},
+ {id:'proteina',name:'Proteína',img:'assets/proteina.png',desc:'Tapas de proteína y nibs de cacao.',dots:['dulce','chocolate']}
+];
+
+function Reveal({children,style}){
+  const ref=React.useRef(null);
+  React.useEffect(()=>{const el=ref.current;if(!el)return;
+    const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){el.classList.add('in');io.disconnect();}},{threshold:.08});
+    io.observe(el);const t=setTimeout(()=>el.classList.add('in'),1600);
+    return()=>{io.disconnect();clearTimeout(t);};},[]);
+  return <div ref={ref} className="reveal" style={style}>{children}</div>;
+}
+
+function Header({lang,setLang,note}){
+  return (
+    <header style={{position:'sticky',insetBlockStart:0,zIndex:20,background:'rgba(247,241,230,.96)',backdropFilter:'saturate(1.2)',borderBlockEnd:'1px solid var(--border-hairline)'}}>
+      <div style={{display:'flex',alignItems:'center',gap:'10px',padding:'9px 20px'}}>
+        <img src="assets/logo-emblem-color.jpg" alt="" width="34" height="34" style={{borderRadius:'50%',border:'1px solid var(--border-hairline)'}}/>
+        <div style={{lineHeight:1}}>
+          <div style={{fontFamily:'var(--font-display)',fontSize:'19px',fontWeight:700,letterSpacing:'.14em',color:'var(--celeste-700)'}}>PATRIA</div>
+          <div style={{fontFamily:'var(--font-label)',fontSize:'9px',letterSpacing:'.22em',textTransform:'uppercase',color:'var(--gold-600)',marginBlockStart:'3px'}}>Orgullo argentino</div>
+        </div>
+        <div style={{marginInlineStart:'auto'}}><LangSwitch lang={lang} onChange={setLang}/></div>
+      </div>
+      {note&&<div style={{padding:'8px 20px 10px',fontSize:'13px',color:'var(--text-muted)',borderBlockStart:'1px solid var(--border-hairline)'}}>La versión en hebreo (RTL) se diseña en el próximo paso.</div>}
+    </header>
+  );
+}
+
+function Hero(){
+  return (
+    <section>
+      <div style={{position:'relative'}}>
+        <img src="assets/hero-bonbon.png" alt="Alfajor Bon Bon cortado, con dulce de leche a la vista" style={{width:'100%',aspectRatio:'850 / 900',objectFit:'cover',objectPosition:'50% 42%'}}/>
+        <div style={{position:'absolute',inset:0,background:'linear-gradient(to top,rgba(20,10,4,.86) 0%,rgba(20,10,4,.45) 34%,rgba(20,10,4,0) 62%)'}}/>
+        <div style={{position:'absolute',insetInline:'20px',insetBlockEnd:'20px',display:'grid',gap:'10px'}}>
+          <Eyebrow tone="onInk" style={{color:'var(--cream-200)'}}>Alfajores artesanales</Eyebrow>
+          <h1 style={{fontSize:'36px',fontWeight:600,color:'var(--cream-50)',lineHeight:1.03}}>Alfajores argentinos,<br/>hechos a mano<br/>en Israel.</h1>
+          <p style={{margin:0,fontSize:'15px',lineHeight:1.5,color:'var(--cream-200)'}}>Tapas gruesas, dulce de leche de verdad y una cobertura que cruje. Como los de allá.</p>
+        </div>
+      </div>
+      <div style={{padding:'16px 20px 18px',display:'grid',gap:'10px'}}>
+        <Button size="lg" href="#pedir" icon={<WA/>} style={{width:'100%'}}>Pedir por WhatsApp</Button>
+        <a href="#sabores" style={{fontFamily:'var(--font-label)',fontSize:'13px',fontWeight:600,letterSpacing:'.06em',textTransform:'uppercase',color:'var(--celeste-700)',textAlign:'center'}}>Ver los ocho sabores ↓</a>
+      </div>
+      <div style={{background:'var(--choc-800)',color:'var(--cream-200)',fontFamily:'var(--font-label)',fontSize:'10.5px',letterSpacing:'.2em',textTransform:'uppercase',textAlign:'center',padding:'11px 20px'}}>Hecho a mano · Tandas chicas · Dulce de leche de verdad</div>
+    </section>
+  );
+}
+
+function FlavourBand({f,i}){
+  return (
+    <Reveal>
+      <article style={{paddingBlockEnd:'30px'}}>
+        <div style={{position:'relative',overflow:'hidden'}}>
+          <img src={f.img} alt={f.name} style={{width:'100%',aspectRatio:'4 / 3',objectFit:'cover'}}/>
+          {f.badge&&<div style={{position:'absolute',insetInlineStart:16,insetBlockStart:16}}><Badge tone="dulce">{f.badge}</Badge></div>}
+          <div style={{position:'absolute',insetInlineEnd:16,insetBlockStart:14,fontFamily:'var(--font-display)',fontSize:'13px',color:'rgba(247,241,230,.85)',letterSpacing:'.1em'}}>0{i+1}</div>
+        </div>
+        <div className="px" style={{paddingBlockStart:'16px',display:'grid',gap:'8px'}}>
+          <h3 style={{fontSize:'27px',fontWeight:600}}>{f.name}</h3>
+          <p style={{margin:0,fontSize:'15.5px',lineHeight:1.55,color:'var(--text-body)'}}>{f.desc}</p>
+          <div style={{display:'flex',gap:'7px',alignItems:'center',marginBlockStart:'2px'}}>{f.dots.map(d=><FlavourDot key={d} flavour={d} size={9}/>)}</div>
+        </div>
+      </article>
+    </Reveal>
+  );
+}
+
+function Sabores(){
+  return (
+    <section id="sabores" style={{paddingBlock:'40px 34px'}}>
+      <div className="px" style={{display:'grid',gap:'12px',justifyItems:'center',textAlign:'center',paddingBlockEnd:'26px'}}>
+        <Eyebrow>Nuestros sabores</Eyebrow>
+        <h2 style={{fontSize:'32px',fontWeight:600}}>Ocho alfajores.<br/>Ninguno tímido.</h2>
+        <p style={{margin:0,fontSize:'15.5px',color:'var(--text-muted)',maxWidth:'32ch'}}>Todos se cortan igual de generosos. La única pregunta es por cuál empezás.</p>
+        <Rule width="110px"/>
+      </div>
+      {FLAVOURS.map((f,i)=><FlavourBand key={f.id} f={f} i={i}/>)}
+      <div className="px" style={{display:'flex',alignItems:'baseline',justifyContent:'space-between',paddingBlock:'6px 14px'}}>
+        <h3 style={{fontSize:'22px',fontWeight:600}}>Y también</h3>
+        <span style={{fontFamily:'var(--font-label)',fontSize:'11px',letterSpacing:'.18em',textTransform:'uppercase',color:'var(--text-muted)'}}>Deslizá →</span>
+      </div>
+      <div className="rail" style={{paddingBlockEnd:'6px'}}>
+        {MORE.map(f=>(
+          <div key={f.id} style={{width:'248px'}}>
+            <img src={f.img} alt={f.name} style={{width:'100%',aspectRatio:'1 / 1',objectFit:'cover',borderRadius:'var(--radius-md)',border:'1px solid var(--border-hairline)'}}/>
+            <div style={{paddingBlockStart:'11px',display:'grid',gap:'5px'}}>
+              <div style={{fontFamily:'var(--font-display)',fontSize:'21px',fontWeight:600,color:'var(--text-strong)',lineHeight:1.1}}>{f.name}</div>
+              <div style={{fontSize:'14px',color:'var(--text-muted)'}}>{f.desc}</div>
+              <div style={{display:'flex',gap:'6px'}}>{f.dots.map(d=><FlavourDot key={d} flavour={d} size={8}/>)}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Historia(){
+  return (
+    <section style={{background:'var(--choc-800)',color:'var(--text-on-ink)',padding:'46px 20px 42px',display:'grid',gap:'16px',justifyItems:'center',textAlign:'center'}}>
+      <Seal size={70} src="assets/logo-emblem-color.jpg" rotate={-5}/>
+      <Eyebrow tone="onInk" style={{marginBlockStart:'6px'}}>La historia</Eyebrow>
+      <h2 style={{fontSize:'30px',fontWeight:600,color:'var(--cream-50)'}}>Un pedazo de Argentina, en Israel.</h2>
+      <p style={{margin:0,fontSize:'16px',lineHeight:1.6,color:'var(--cream-200)',maxWidth:'34ch'}}>Nos vinimos con la receta de casa y una certeza: acá faltaba el alfajor de verdad. Así que lo hacemos nosotros, en tandas chicas, como se hace allá.</p>
+      <p style={{margin:0,fontSize:'16px',lineHeight:1.6,color:'var(--text-on-ink-muted)',maxWidth:'34ch'}}>Cada uno se rellena, se baña y se envuelve a mano, con el sticker puesto uno por uno.</p>
+      <Rule width="120px" style={{marginBlockStart:'8px',opacity:.85}}/>
+      <div style={{fontFamily:'var(--font-label)',fontSize:'11px',letterSpacing:'.22em',textTransform:'uppercase',color:'var(--gold-400)'}}>Familia PATRIA</div>
+    </section>
+  );
+}
+
+function Artesanal(){
+  return (
+    <section className="sec">
+      <div className="px" style={{display:'grid',gap:'11px',paddingBlockEnd:'20px'}}>
+        <Eyebrow>Hecho a mano</Eyebrow>
+        <h2 style={{fontSize:'29px',fontWeight:600}}>El relleno se ve<br/>cuando lo cortás.</h2>
+      </div>
+      <div style={{display:'grid',gridTemplateColumns:'1.25fr 1fr',gap:'8px',paddingInline:'20px'}}>
+        <img src="assets/malbec.png" alt="Malbec cortado" style={{width:'100%',height:'100%',aspectRatio:'3 / 4',objectFit:'cover',borderRadius:'var(--radius-md)'}}/>
+        <div style={{display:'grid',gap:'8px'}}>
+          <img src="assets/proteina.png" alt="Proteína cortado" style={{width:'100%',aspectRatio:'1 / 1',objectFit:'cover',borderRadius:'var(--radius-md)'}}/>
+          <img src="assets/alfadubai.png" alt="AlfaDubai cortado" style={{width:'100%',aspectRatio:'1 / 1',objectFit:'cover',borderRadius:'var(--radius-md)'}}/>
+        </div>
+      </div>
+      <div className="px" style={{paddingBlockStart:'20px',display:'grid',gap:'0'}}>
+        {[['Tandas chicas','Se amasa y se baña por lotes, no en serie.'],['Relleno generoso','Capa gruesa de dulce; no se estira con nada.'],['Envuelto a mano','Papel encerado y sticker PATRIA, uno por uno.']].map(([t,d],i)=>(
+          <div key={t} style={{display:'flex',gap:'14px',alignItems:'flex-start',paddingBlock:'15px',borderBlockStart:i?'1px solid var(--border-hairline)':'0'}}>
+            <span style={{fontFamily:'var(--font-display)',fontSize:'15px',color:'var(--gold-600)',paddingBlockStart:'3px'}}>0{i+1}</span>
+            <div>
+              <div style={{fontFamily:'var(--font-label)',fontSize:'13px',fontWeight:700,letterSpacing:'.1em',textTransform:'uppercase',color:'var(--choc-700)'}}>{t}</div>
+              <div style={{fontSize:'15px',color:'var(--text-muted)',lineHeight:1.5}}>{d}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Prueba(){
+  return (
+    <section style={{background:'var(--cream-200)',padding:'42px 0 40px'}}>
+      <div className="px" style={{display:'grid',gap:'11px',justifyItems:'center',textAlign:'center',paddingBlockEnd:'22px'}}>
+        <Eyebrow>Lo que dicen</Eyebrow>
+        <h2 style={{fontSize:'28px',fontWeight:600}}>Nuestros clientes</h2>
+        <Rule width="100px"/>
+      </div>
+      <div className="rail">
+        {[1,2,3].map(n=>(
+          <figure key={n} style={{width:'262px',margin:0,background:'var(--cream-50)',border:'1px solid var(--border-hairline)',borderRadius:'var(--radius-md)',padding:'18px',display:'grid',gap:'12px',boxShadow:'var(--shadow-sm)'}}>
+            <div className="ph" style={{minHeight:'96px',display:'grid',placeItems:'center'}}>Reseña real de cliente {n} — a insertar</div>
+            <figcaption style={{display:'flex',alignItems:'center',gap:'10px'}}>
+              <div style={{width:34,height:34,borderRadius:'50%',border:'1px dashed rgba(74,42,23,.32)'}}/>
+              <div style={{fontFamily:'var(--font-label)',fontSize:'11px',letterSpacing:'.14em',textTransform:'uppercase',color:'var(--text-muted)'}}>Nombre · fuente</div>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <div className="px" style={{paddingBlockStart:'24px',display:'grid',gap:'10px'}}>
+        <div style={{fontFamily:'var(--font-label)',fontSize:'11px',letterSpacing:'.2em',textTransform:'uppercase',color:'var(--choc-600)'}}>Desde Instagram</div>
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'6px'}}>
+          {[1,2,3,4,5,6].map(n=><div key={n} className="ph" style={{aspectRatio:'1 / 1',display:'grid',placeItems:'center',fontSize:'10px',letterSpacing:'.06em',padding:'6px'}}>Post real</div>)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Pedido(){
+  return (
+    <section className="sec">
+      <div className="px" style={{display:'grid',gap:'11px',justifyItems:'center',textAlign:'center',paddingBlockEnd:'24px'}}>
+        <Eyebrow>Cómo se pide</Eyebrow>
+        <h2 style={{fontSize:'29px',fontWeight:600}}>Tres mensajes<br/>y listo.</h2>
+        <Rule width="110px"/>
+      </div>
+      <div className="px" style={{display:'grid',gap:'14px'}}>
+        {[['Elegí tus sabores','Media docena surtida o todos del mismo. Vos decidís.'],['Escribinos por WhatsApp','Nos mandás el pedido en un mensaje; te confirmamos disponibilidad.'],['Coordinamos la entrega','Acordamos día y forma de entrega antes de que pagues nada.']].map(([t,d],i)=>(
+          <div key={t} style={{display:'flex',gap:'14px',alignItems:'flex-start',background:'var(--cream-50)',border:'1px solid var(--border-hairline)',borderRadius:'var(--radius-sm)',padding:'16px'}}>
+            <span style={{fontFamily:'var(--font-display)',fontSize:'26px',fontWeight:600,color:'var(--dulce-500)',lineHeight:1}}>{i+1}</span>
+            <div>
+              <div style={{fontFamily:'var(--font-display)',fontSize:'20px',fontWeight:600,color:'var(--text-strong)'}}>{t}</div>
+              <div style={{fontSize:'15px',color:'var(--text-muted)',lineHeight:1.5,marginBlockStart:'3px'}}>{d}</div>
+            </div>
+          </div>
+        ))}
+        <div className="ph" style={{textAlign:'start',lineHeight:1.7,padding:'14px 16px'}}>Zonas de entrega · mínimo de pedido · tiempos · precios — información a confirmar con PATRIA</div>
+      </div>
+    </section>
+  );
+}
+
+function CTA(){
+  return (
+    <section id="pedir" style={{position:'relative'}}>
+      <img src="assets/frutos-rojos.png" alt="" style={{width:'100%',aspectRatio:'4 / 3',objectFit:'cover'}}/>
+      <div style={{background:'var(--choc-800)',padding:'34px 20px 40px',display:'grid',gap:'14px',justifyItems:'center',textAlign:'center'}}>
+        <Eyebrow tone="onInk">Pedidos</Eyebrow>
+        <h2 style={{fontSize:'30px',fontWeight:600,color:'var(--cream-50)'}}>Escribinos y<br/>elegí el tuyo.</h2>
+        <p style={{margin:0,fontSize:'16px',color:'var(--cream-200)',maxWidth:'30ch'}}>Contestamos nosotros, no un bot. Contanos cuántos querés y de qué sabor.</p>
+        <Button size="lg" variant="onInk" href="#" icon={<WA/>} style={{width:'100%',marginBlockStart:'4px'}}>Pedir por WhatsApp</Button>
+        <div className="ph" style={{width:'100%',borderColor:'rgba(247,241,230,.3)',background:'rgba(247,241,230,.05)',color:'var(--text-on-ink-muted)'}}>Número de WhatsApp — a insertar</div>
+      </div>
+    </section>
+  );
+}
+
+function Instagram(){
+  return (
+    <footer>
+      <div className="px" style={{paddingBlock:'34px',display:'grid',gap:'12px',justifyItems:'center',textAlign:'center'}}>
+        <Eyebrow tone="blue">Instagram</Eyebrow>
+        <p style={{margin:0,fontSize:'15.5px',color:'var(--text-muted)',maxWidth:'30ch'}}>Cada tanda nueva, primero la mostramos ahí.</p>
+        <Button variant="secondary" size="md" href="#" style={{whiteSpace:'nowrap'}}>Seguinos en Instagram</Button>
+      </div>
+      <div style={{borderBlockStart:'1px solid var(--border-hairline)',padding:'20px 20px 30px',display:'flex',alignItems:'center',gap:'12px'}}>
+        <Seal size={40} src="assets/logo-seal-cream.jpg" rotate={0} shadow={false}/>
+        <div style={{fontFamily:'var(--font-label)',fontSize:'10px',letterSpacing:'.14em',textTransform:'uppercase',color:'var(--text-muted)',whiteSpace:'nowrap'}}>PATRIA · Orgullo argentino</div>
+        <div style={{marginInlineStart:'auto',fontFamily:'var(--font-label)',fontSize:'11px',letterSpacing:'.1em',color:'var(--celeste-700)'}}>ES</div>
+      </div>
+    </footer>
+  );
+}
+
+function App(){
+  const [lang,setLang]=React.useState('es');
+  return (
+    <div>
+      <Header lang={lang} setLang={setLang} note={lang==='he'}/>
+      <Hero/>
+      <Sabores/>
+      <Historia/>
+      <Artesanal/>
+      <Prueba/>
+      <Pedido/>
+      <CTA/>
+      <Instagram/>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

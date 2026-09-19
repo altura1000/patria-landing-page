@@ -1,0 +1,32 @@
+:root{
+  /* Display — Bodoni Moda, tight, for product & section titles */
+  --fs-display-xl:clamp(3rem,8vw,5.5rem); /* @kind font */
+  --fs-display-l:clamp(2.5rem,5.5vw,4rem); /* @kind font */
+  --fs-display-m:clamp(2rem,4vw,2.75rem); /* @kind font */
+  --fs-display-s:1.625rem; /* @kind font */
+  --lh-display:1.04; /* @kind font */
+  --ls-display:-0.015em; /* @kind font */
+
+  /* Body — Assistant */
+  --fs-body-l:1.1875rem; /* @kind font */
+  --fs-body-m:1.0625rem; /* @kind font */
+  --fs-body-s:0.9375rem; /* @kind font */
+  --fs-caption:0.8125rem; /* @kind font */
+  --lh-body:1.62; /* @kind font */
+  --lh-tight:1.35; /* @kind font */
+
+  /* Eyebrow / label — letterspaced small caps, the logo's "ORGULLO ARGENTINO" voice */
+  --fs-eyebrow:0.75rem; /* @kind font */
+  --ls-eyebrow:0.22em; /* @kind font */
+  --fs-label:0.8125rem; /* @kind font */
+  --ls-label:0.06em; /* @kind font */
+
+  --fw-body:400; /* @kind font */
+  --fw-medium:600; /* @kind font */
+  --fw-bold:700; /* @kind font */
+  --fw-display:500; /* @kind font */
+  --fw-display-bold:700; /* @kind font */
+
+  --measure:64ch; /* @kind other */
+  --measure-narrow:46ch; /* @kind other */
+}

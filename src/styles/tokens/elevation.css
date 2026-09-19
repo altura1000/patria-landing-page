@@ -1,0 +1,13 @@
+:root{
+  /* Shadows are warm-brown tinted and low — never neutral grey, never glassy */
+  --shadow-none:none;
+  --shadow-sm:0 1px 2px rgba(50,29,15,.08);
+  --shadow-md:0 4px 14px rgba(50,29,15,.10);
+  --shadow-lg:0 14px 40px rgba(50,29,15,.16);
+  --shadow-seal:0 6px 18px rgba(50,29,15,.22);
+  --shadow-inset-hairline:inset 0 0 0 1px var(--border-hairline);
+
+  /* Protection gradient for text over food photography */
+  --scrim-bottom:linear-gradient(to top,rgba(35,19,9,.82) 0%,rgba(35,19,9,.52) 38%,rgba(35,19,9,0) 78%); /* @kind other */
+  --scrim-full:linear-gradient(to top,rgba(35,19,9,.78),rgba(35,19,9,.28)); /* @kind other */
+}

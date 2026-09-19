@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>PATRIA · Alfajores argentinos — Home mobile</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/colors.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/typography.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/motion.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/tokens/base.css">
+<link rel="stylesheet" href="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/styles.css">
+<style>
+html{background:#2A1A10}
+body{background:#2A1A10;display:flex;justify-content:center;min-height:100vh}
+#root{width:390px;max-width:100%;background:var(--cream-100);overflow-x:hidden;position:relative}
+.px{padding-inline:22px}
+.rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{scroll-snap-align:center;flex:0 0 auto}
+.ph{border:1px dashed rgba(74,42,23,.3);color:var(--text-muted);font-family:var(--font-label);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:12px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+a{border-bottom:0;color:var(--celeste-700)}
+a:hover{color:var(--choc-700)}
+.walink{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-label);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding-block:6px;border-bottom:1px solid currentColor}
+.wabtn{display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;font-family:var(--font-label);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:16px 26px;border-radius:var(--radius-sm);background:var(--choc-700);color:var(--cream-50);border:1px solid var(--choc-700);transition:background .22s var(--ease-standard),transform .12s var(--ease-standard)}
+.wabtn:hover{background:var(--choc-900);border-color:var(--choc-900);color:var(--cream-50)}
+.wabtn:active{transform:scale(.985)}
+.wabtn.cream{background:var(--cream-50);color:var(--choc-800);border-color:var(--cream-50);box-shadow:0 8px 26px rgba(18,9,3,.32)}
+.wabtn.cream:hover{background:#fff;border-color:#fff;color:var(--choc-900)}
+.waminor{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-family:var(--font-label);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--choc-700);border:1px solid var(--border-strong);border-radius:var(--radius-sm);padding:10px 14px;transition:background .22s var(--ease-standard)}
+.waminor:hover{background:rgba(74,42,23,.06);color:var(--choc-900)}
+.price{display:inline-block;font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--dulce-600);border-bottom:1px dashed rgba(169,102,31,.55);line-height:1.2;padding-block-end:2px;unicode-bidi:isolate}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#4A2A17"/><circle cx="50" cy="50" r="26" fill="#F7F1E6"/><text x="50" y="58" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#2E5B8C" text-anchor="middle">P</text></svg></template>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="_ds/patria-design-system-5cb717ae-895e-4d54-b4c0-c7ceb12a18c7/_ds_bundle.js"></script>
+<script type="text/babel">
+const {Eyebrow,Badge,Rule,Seal,FlavourDot,LangSwitch}=window.PATRIADesignSystem_5cb717;
+const WA_PHONE=''; /* número real de PATRIA — a insertar */
+const wa=t=>'https://wa.me/'+WA_PHONE+'?text='+encodeURIComponent(t);
+
+const WA=({size=16,color="currentColor"})=>(
+  <svg width={size} height={size} viewBox="0 0 24 24" fill={color} aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.19-.31a8.24 8.24 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.79.97-.14.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.16 1.72 2.75 4.19 3.75.58.25 1.04.4 1.4.51.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.22-.18-.47-.31z"/></svg>);
+
+const F={
+ clasico:{n:'El Clásico de Siempre',img:'assets/clasico.png',d:'Dos tapas de chocolate negro, dulce de leche espeso en el medio y cobertura entera. El de siempre.',dots:['dulce','chocolate']},
+ bonbon:{n:'Bon Bon',img:'assets/bon-bon.png',d:'Dulce de leche bien cargado entre tapas claras de maicena, bañado todo en chocolate con leche.',dots:['dulce','chocolate']},
+ halva:{n:'Dulce de Leche & Halva',img:'assets/halva.png',d:'Hilos de halva y sésamo tostado sobre el dulce, cubierto en chocolate blanco.',dots:['dulce','halva']},
+ frutos:{n:'Frutos Rojos',img:'assets/frutos-rojos.png',d:'Compota de frutos rojos y dulce de leche entre tapas de cacao.',dots:['dulce','frutosRojos']},
+ malbec:{n:'Malbec',img:'assets/malbec.png',d:'Reducción de Malbec que se escapa cuando lo cortás.',dots:['malbec','chocolate']},
+ dubai:{n:'AlfaDubai',img:'assets/alfadubai.png',d:'Pistacho y kadaif crocante en chocolate negro.',dots:['pistacho','chocolate']},
+ blanut:{n:'BlaNut',img:'assets/blanut.png',d:'Nuez y crema, con nuez también en la cobertura blanca.',dots:['nuez','blanco']},
+ proteina:{n:'Proteína',img:'assets/proteina.png',d:'Tapas de proteína, dulce y nibs de cacao.',dots:['dulce','chocolate']}
+};
+const PRICE='₪ ——'; /* precio por unidad — a confirmar con PATRIA */
+function PedirEste({name,tone='light',style}){
+  return <a href={wa('¡Hola PATRIA! Quiero pedir '+name+'. ¿Me pasan disponibilidad?')} className="waminor" style={tone==='dark'?{color:'var(--cream-100)',borderColor:'rgba(247,241,230,.45)',...style}:style}><WA size={13}/> Pedir este</a>;
+}
+function PriceRow({name,tone='light',style}){
+  return (
+    <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:'12px',marginBlockStart:'14px',...style}}>
+      <span className="price" dir="ltr" style={tone==='dark'?{color:'var(--dulce-300)',borderBottomColor:'rgba(229,181,115,.5)'}:null}>{PRICE}</span>
+      <PedirEste name={name} tone={tone}/>
+    </div>
+  );
+}
+
+function Reveal({children,style,delay=0}){
+  const ref=React.useRef(null);
+  React.useEffect(()=>{const el=ref.current;if(!el)return;
+    const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){setTimeout(()=>el.classList.add('in'),delay);io.disconnect();}},{threshold:.06});
+    io.observe(el);const t=setTimeout(()=>el.classList.add('in'),1800);
+    return()=>{io.disconnect();clearTimeout(t);};},[]);
+  return <div ref={ref} className="reveal" style={style}>{children}</div>;
+}
+
+function Header({lang,setLang}){
+  const [solid,setSolid]=React.useState(false);
+  React.useEffect(()=>{const f=()=>setSolid(window.scrollY>520);window.addEventListener('scroll',f,{passive:true});return()=>window.removeEventListener('scroll',f);},[]);
+  const ink=solid?'var(--celeste-700)':'var(--cream-50)';
+  return (
+    <header style={{position:'fixed',insetBlockStart:0,insetInline:0,margin:'0 auto',width:'390px',maxWidth:'100%',zIndex:30,display:'flex',alignItems:'center',gap:'10px',padding:'12px 22px',
+      background:solid?'rgba(247,241,230,.95)':'linear-gradient(to bottom,rgba(20,10,4,.5),rgba(20,10,4,0))',
+      borderBlockEnd:solid?'1px solid var(--border-hairline)':'1px solid transparent',transition:'background .3s var(--ease-standard),border-color .3s'}}>
+      <img src="assets/logo-emblem-color.jpg" alt="" width="30" height="30" style={{borderRadius:'50%',border:'1px solid rgba(255,255,255,.35)',opacity:solid?1:.96}}/>
+      <span style={{fontFamily:'var(--font-display)',fontSize:'18px',fontWeight:700,letterSpacing:'.16em',color:ink,transition:'color .3s'}}>PATRIA</span>
+      <div style={{marginInlineStart:'auto'}}>
+        <LangSwitch lang={lang} onChange={setLang} style={{borderColor:solid?'var(--border-hairline)':'rgba(247,241,230,.4)',background:solid?'transparent':'rgba(20,10,4,.25)'}}/>
+      </div>
+    </header>
+  );
+}
+
+function Hero(){
+  return (
+    <section style={{position:'relative',height:'680px',overflow:'hidden'}}>
+      <img src="assets/hero-bonbon.png" alt="Alfajor Bon Bon cortado al medio, con el dulce de leche a la vista" style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'54% 46%'}}/>
+      <div style={{position:'absolute',inset:0,background:'linear-gradient(to top,rgba(18,9,3,.8) 0%,rgba(18,9,3,.15) 42%,rgba(18,9,3,0) 66%)'}}/>
+      <div style={{position:'absolute',insetInline:'22px',insetBlockEnd:'30px',display:'grid',gap:'16px',justifyItems:'start'}}>
+        <h1 style={{fontSize:'44px',fontWeight:600,color:'var(--cream-50)',lineHeight:.98,letterSpacing:'-.02em'}}>Como los<br/>de allá.</h1>
+        <div style={{fontFamily:'var(--font-label)',fontSize:'11px',letterSpacing:'.24em',textTransform:'uppercase',color:'var(--cream-200)'}}>Alfajores argentinos · hechos a mano</div>
+        <a href={wa('¡Hola PATRIA! Quiero pedir alfajores.')} className="wabtn cream" style={{marginBlockStart:'2px'}}><WA size={15}/> Pedir alfajores</a>
+      </div>
+      <a href="#sabores" aria-label="Ver los sabores" style={{position:'absolute',insetInlineEnd:'22px',insetBlockEnd:'30px',width:'46px',height:'46px',borderRadius:'50%',border:'1px solid rgba(247,241,230,.4)',display:'grid',placeItems:'center',color:'var(--cream-100)',fontSize:'16px'}}>↓</a>
+    </section>
+  );
+}
+
+function InfoStrip(){
+  return (
+    <div style={{background:'var(--cream-200)',borderBlockEnd:'1px solid var(--border-hairline)',padding:'12px 14px',display:'grid',gridTemplateColumns:'repeat(3,1fr)',alignItems:'center'}}>
+      {['Hechos a mano','Pedidos en Tel Aviv','Entrega hasta 48h'].map((t,i)=>(
+        <span key={t} style={{fontFamily:'var(--font-label)',fontSize:'9.5px',fontWeight:600,letterSpacing:'.1em',textTransform:'uppercase',color:'var(--choc-600)',textAlign:'center',lineHeight:1.35,borderInlineStart:i?'1px solid var(--gold-500)':'0',paddingInline:'8px'}}>{t}</span>
+      ))}
+    </div>
+  );
+}
+
+function Manifiesto(){
+  return (
+    <section className="px" style={{paddingBlock:'44px 40px'}}>
+      <Reveal>
+        <p style={{margin:0,fontFamily:'var(--font-display)',fontSize:'27px',lineHeight:1.22,color:'var(--choc-700)',letterSpacing:'-.01em'}}>
+          Tapas gruesas, dulce de leche <em style={{fontStyle:'italic',color:'var(--dulce-600)'}}>de verdad</em> y una cobertura que cruje cuando la mordés.
+        </p>
+        <div style={{display:'flex',alignItems:'center',gap:'14px',marginBlockStart:'26px'}}>
+          <Rule width="72px" ornament={false}/>
+          <span style={{fontFamily:'var(--font-label)',fontSize:'11px',letterSpacing:'.22em',textTransform:'uppercase',color:'var(--gold-600)'}}>Orgullo argentino</span>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+function Destacados(){
+  const tres=[[F.clasico,'El Clásico','Dulce de leche espeso entre dos tapas de chocolate negro, cubierto entero.'],[F.bonbon,'Bon Bon','Tapas claras de maicena, dulce bien cargado, baño de chocolate con leche.'],[F.halva,'Halva','Hilos de halva y sésamo tostado sobre el dulce, en chocolate blanco.']];
+  return (
+    <section id="sabores" style={{paddingBlock:'8px 0'}}>
+      <div className="px" style={{paddingBlockEnd:'22px'}}>
+        <Eyebrow>Nuestros sabores</Eyebrow>
+        <h2 style={{fontSize:'34px',fontWeight:600,lineHeight:1.02,marginBlockStart:'12px'}}>Tres para<br/>empezar.</h2>
+        <p style={{margin:'12px 0 0',fontSize:'16px',lineHeight:1.55,color:'var(--text-muted)',maxWidth:'30ch'}}>Los que más nos piden. Hay cinco más esperando en la carta.</p>
+      </div>
+      <Reveal>
+        <div style={{position:'relative'}}>
+          <img src={F.clasico.img} alt={F.clasico.n} style={{width:'100%',aspectRatio:'4 / 3',objectFit:'cover'}}/>
+          <div style={{position:'absolute',insetInlineStart:0,insetBlockEnd:0,background:'var(--cream-100)',padding:'12px 18px 0 22px'}}>
+            <span style={{fontFamily:'var(--font-display)',fontSize:'26px',fontWeight:600,color:'var(--text-strong)',lineHeight:1}}>El Clásico</span>
+          </div>
+        </div>
+        <div className="px" style={{paddingBlock:'12px 26px'}}>
+          <p style={{margin:0,fontSize:'15.5px',lineHeight:1.55,color:'var(--text-muted)'}}>{tres[0][2]}</p>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'12px',paddingInline:'22px'}}>
+          {tres.slice(1).map(([f,label,d])=>(
+            <figure key={label} style={{margin:0}}>
+              <img src={f.img} alt={f.n} style={{width:'100%',aspectRatio:'4 / 5',objectFit:'cover'}}/>
+              <figcaption style={{marginBlockStart:'10px'}}>
+                <div style={{fontFamily:'var(--font-display)',fontSize:'21px',fontWeight:600,color:'var(--text-strong)',lineHeight:1.05}}>{label}</div>
+                <div style={{fontSize:'14px',lineHeight:1.45,color:'var(--text-muted)',marginBlockStart:'5px'}}>{d}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </Reveal>
+      <div className="px" style={{paddingBlock:'26px 48px',display:'flex',alignItems:'center',justifyContent:'space-between',gap:'14px',flexWrap:'wrap'}}>
+        <a href="PATRIA Sabores Mobile (publicable).html" className="waminor" style={{borderColor:'var(--choc-700)'}}>Ver todos los sabores →</a>
+        <span className="price" dir="ltr" style={{fontSize:'17px'}}>{PRICE}</span>
+      </div>
+    </section>
+  );
+}
+
+function PrimeraVez(){
+  return (
+    <section style={{background:'var(--cream-200)',paddingBlock:'42px 40px'}} className="px">
+      <Eyebrow>Para empezar</Eyebrow>
+      <h2 style={{fontSize:'34px',fontWeight:600,lineHeight:1.02,marginBlockStart:'12px'}}>¿Primera vez?</h2>
+      <p style={{margin:'12px 0 0',fontSize:'16px',lineHeight:1.55,color:'var(--text-muted)',maxWidth:'30ch'}}>Empezá por nuestros tres favoritos y después seguís explorando.</p>
+      <div style={{display:'flex',gap:'16px',flexWrap:'wrap',marginBlock:'18px 22px'}}>
+        {[['Clásico','chocolate'],['Bon Bon','dulce'],['Halva','halva']].map(([l,d])=>(
+          <span key={l} style={{display:'inline-flex',alignItems:'center',gap:'8px',fontFamily:'var(--font-display)',fontSize:'19px',fontWeight:600,color:'var(--text-strong)'}}><FlavourDot flavour={d} size={9}/>{l}</span>
+        ))}
+      </div>
+      <a href={wa('¡Hola PATRIA! Es mi primera vez. Quiero probar el Clásico, el Bon Bon y el de Halva.')} className="wabtn" style={{width:'100%'}}><WA/> Quiero probarlos</a>
+    </section>
+  );
+}
+
+function PhotoPause({src,alt,ratio='3 / 4',pos='50% 50%'}){
+  return <img src={src} alt={alt} style={{width:'100%',aspectRatio:ratio,objectFit:'cover',objectPosition:pos,display:'block'}}/>;
+}
+
+function Historia(){
+  return (
+    <section style={{position:'relative'}}>
+      <PhotoPause src="assets/clasico.png" alt="El Clásico de Siempre sobre la tabla" ratio="1 / 1" pos="50% 42%"/>
+      <div style={{background:'var(--choc-800)',color:'var(--text-on-ink)',padding:'0 22px 48px',position:'relative'}}>
+        <div style={{display:'flex',justifyContent:'center',marginBlockStart:'-38px',marginBlockEnd:'22px'}}>
+          <Seal size={76} src="assets/logo-emblem-color.jpg" rotate={-5}/>
+        </div>
+        <Reveal>
+          <h2 style={{fontSize:'32px',fontWeight:600,color:'var(--cream-50)',lineHeight:1.05}}>Nos trajimos<br/>la receta de casa.</h2>
+          <p style={{margin:'18px 0 0',fontSize:'16.5px',lineHeight:1.62,color:'var(--cream-200)'}}>Acá faltaba el alfajor de verdad, así que lo hacemos nosotros: en tandas chicas, con el dulce de leche que corresponde, como se hace allá.</p>
+          <p style={{margin:'14px 0 0',fontSize:'16.5px',lineHeight:1.62,color:'var(--text-on-ink-muted)'}}>Cada uno se rellena, se baña y se envuelve a mano. El sticker también lo ponemos uno por uno.</p>
+          <div style={{fontFamily:'var(--font-label)',fontSize:'11px',letterSpacing:'.22em',textTransform:'uppercase',color:'var(--gold-400)',marginBlockStart:'26px'}}>Familia PATRIA · Israel</div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Artesanal(){
+  return (
+    <section style={{paddingBlock:'56px 52px',position:'relative'}}>
+      <div className="px">
+        <Reveal><h2 style={{fontSize:'30px',fontWeight:600,lineHeight:1.05}}>El relleno se ve<br/>cuando lo cortás.</h2></Reveal>
+      </div>
+      <div style={{position:'relative',marginBlockStart:'26px',height:'430px'}}>
+        <img src="assets/malbec.png" alt="Malbec cortado, con la reducción de vino a la vista" style={{position:'absolute',insetInlineStart:0,insetBlockStart:0,width:'62%',aspectRatio:'3 / 4',objectFit:'cover'}}/>
+        <img src="assets/proteina.png" alt="Proteína cortado sobre la tabla" style={{position:'absolute',insetInlineEnd:0,insetBlockEnd:0,width:'56%',aspectRatio:'4 / 5',objectFit:'cover',border:'6px solid var(--cream-100)'}}/>
+      </div>
+      <div className="px" style={{marginBlockStart:'22px'}}>
+        {[['Tandas chicas','Se amasa y se baña por lotes, no en serie.'],['Relleno generoso','Capa gruesa de dulce; no se estira con nada.'],['Envuelto a mano','Papel encerado y sticker PATRIA, uno por uno.']].map(([t,d],i)=>(
+          <div key={t} style={{display:'flex',gap:'16px',alignItems:'baseline',paddingBlock:'14px',borderBlockStart:i?'1px solid var(--border-hairline)':'0'}}>
+            <span style={{fontFamily:'var(--font-display)',fontSize:'13px',color:'var(--gold-600)'}}>0{i+1}</span>
+            <div>
+              <div style={{fontFamily:'var(--font-display)',fontSize:'20px',fontWeight:600,color:'var(--text-strong)'}}>{t}</div>
+              <div style={{fontSize:'15px',color:'var(--text-muted)',lineHeight:1.5}}>{d}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Prueba(){
+  return (
+    <section style={{background:'var(--cream-100)',borderBlockStart:'1px solid var(--border-hairline)',paddingBlock:'42px 38px'}}>
+      <div className="px" style={{paddingBlockEnd:'18px'}}>
+        <Eyebrow>Lo que dicen</Eyebrow>
+        <h2 style={{fontSize:'28px',fontWeight:600,marginBlockStart:'10px'}}>Nuestros clientes</h2>
+      </div>
+      <div className="rail" style={{paddingInline:'22px'}}>
+        {[1,2].map(n=>(
+          <figure key={n} style={{width:'276px',margin:0,display:'grid',gap:'14px'}}>
+            <span style={{fontFamily:'var(--font-display)',fontSize:'42px',lineHeight:.6,color:'var(--gold-500)'}}>“</span>
+            <div className="ph" style={{minHeight:'104px',display:'grid',placeItems:'center',background:'rgba(255,255,255,.4)'}}>Reseña real de cliente {n} — a insertar</div>
+            <figcaption style={{display:'flex',alignItems:'center',gap:'10px'}}>
+              <div style={{width:32,height:32,borderRadius:'50%',border:'1px dashed rgba(74,42,23,.3)'}}/>
+              <span style={{fontFamily:'var(--font-label)',fontSize:'10.5px',letterSpacing:'.16em',textTransform:'uppercase',color:'var(--text-muted)'}}>Nombre · fuente</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <div style={{marginBlockStart:'34px'}}>
+        <div className="px" style={{fontFamily:'var(--font-label)',fontSize:'10.5px',letterSpacing:'.22em',textTransform:'uppercase',color:'var(--choc-600)',paddingBlockEnd:'10px'}}>Desde Instagram</div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'3px'}}>
+          {[1,2,3].map(n=><div key={n} className="ph" style={{aspectRatio:'1 / 1',display:'grid',placeItems:'center',fontSize:'9.5px',letterSpacing:'.08em',border:'1px dashed rgba(74,42,23,.26)'}}>Post real</div>)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Pedido(){
+  return (
+    <section style={{paddingBlock:'52px 46px'}} className="px">
+      <Eyebrow>Cómo se pide</Eyebrow>
+      <h2 style={{fontSize:'30px',fontWeight:600,lineHeight:1.04,marginBlockStart:'12px'}}>Tres mensajes<br/>y listo.</h2>
+      <div style={{marginBlockStart:'26px'}}>
+        {[['Elegí tus sabores','Media docena surtida o todos del mismo. Vos decidís.'],['Escribinos por WhatsApp','Mandás el pedido en un mensaje; te confirmamos disponibilidad.'],['Coordinamos la entrega','Acordamos día y forma antes de que pagues nada.']].map(([t,d],i)=>(
+          <div key={t} style={{display:'flex',gap:'18px',alignItems:'baseline',paddingBlock:'16px',borderBlockStart:'1px solid var(--border-hairline)'}}>
+            <span style={{fontFamily:'var(--font-display)',fontSize:'28px',fontWeight:600,color:'var(--dulce-500)',lineHeight:1}}>{i+1}</span>
+            <div>
+              <div style={{fontFamily:'var(--font-display)',fontSize:'21px',fontWeight:600,color:'var(--text-strong)'}}>{t}</div>
+              <div style={{fontSize:'15px',color:'var(--text-muted)',lineHeight:1.5,marginBlockStart:'2px'}}>{d}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="ph" style={{textAlign:'start',lineHeight:1.8,marginBlockStart:'22px',letterSpacing:'.1em'}}>Zonas de entrega · mínimo · tiempos · precios — a confirmar</div>
+    </section>
+  );
+}
+
+function CTA(){
+  return (
+    <section id="pedir">
+      <div style={{position:'relative'}}>
+      <img src="assets/frutos-rojos.png" alt="Alfajor de frutos rojos cortado" style={{width:'100%',aspectRatio:'1 / 1',objectFit:'cover',objectPosition:'40% 55%'}}/>
+      <div style={{position:'absolute',inset:0,background:'linear-gradient(to top,rgba(18,9,3,.92) 8%,rgba(18,9,3,.1) 58%,rgba(18,9,3,0) 80%)'}}/>
+      <div style={{position:'absolute',insetInline:'22px',insetBlockEnd:'26px'}}>
+        <h2 style={{fontSize:'34px',fontWeight:600,color:'var(--cream-50)',lineHeight:1.02}}>¿Te tentaste?</h2>
+        <p style={{margin:'12px 0 0',fontSize:'15.5px',color:'var(--cream-200)',maxWidth:'28ch'}}>Escribinos por WhatsApp y armamos tu pedido. Contestamos nosotros.</p>
+      </div>
+      </div>
+      <div style={{background:'var(--choc-800)',padding:'24px 22px 32px',display:'grid',gap:'14px'}}>
+        <a href={wa('¡Hola PATRIA! Quiero hacer un pedido.')} className="wabtn cream" style={{width:'100%'}}><WA/> Hacer mi pedido</a>
+        <div className="ph" style={{justifySelf:'start',borderColor:'rgba(247,241,230,.28)',color:'var(--text-on-ink-muted)',padding:'8px 12px',fontSize:'10px'}}>Número de WhatsApp — a insertar</div>
+      </div>
+    </section>
+  );
+}
+
+function Pie(){
+  return (
+    <footer>
+      <div className="px" style={{paddingBlock:'40px 34px',display:'grid',gap:'10px'}}>
+        <Eyebrow tone="blue">Instagram</Eyebrow>
+        <p style={{margin:0,fontSize:'17px',color:'var(--choc-700)',fontFamily:'var(--font-display)',lineHeight:1.3,maxWidth:'26ch'}}>Cada tanda nueva, primero la mostramos ahí.</p>
+        <a href="#" style={{fontFamily:'var(--font-label)',fontSize:'13px',fontWeight:700,letterSpacing:'.12em',textTransform:'uppercase',borderBottom:'1px solid currentColor',justifySelf:'start',marginBlockStart:'4px'}}>Seguinos</a>
+      </div>
+      <div style={{borderBlockStart:'1px solid var(--border-hairline)',padding:'18px 22px 76px',display:'flex',alignItems:'center',gap:'12px'}}>
+        <Seal size={38} src="assets/logo-seal-cream.jpg" rotate={0} shadow={false}/>
+        <span style={{fontFamily:'var(--font-label)',fontSize:'10px',letterSpacing:'.16em',textTransform:'uppercase',color:'var(--text-muted)',whiteSpace:'nowrap'}}>PATRIA · Orgullo argentino</span>
+      </div>
+    </footer>
+  );
+}
+
+function FloatWA(){
+  const [show,setShow]=React.useState(false);
+  React.useEffect(()=>{
+    const f=()=>{
+      const cta=document.getElementById('pedir');
+      const near=cta?cta.getBoundingClientRect().top<window.innerHeight-60:false;
+      setShow(window.scrollY>860&&!near);
+    };
+    f();window.addEventListener('scroll',f,{passive:true});return()=>window.removeEventListener('scroll',f);},[]);
+  return (
+    <a href={wa('¡Hola PATRIA! Quiero hacer un pedido.')} aria-label="Pedir por WhatsApp" style={{position:'fixed',insetBlockEnd:'18px',insetInlineEnd:'calc(50% - 195px + 18px)',zIndex:25,display:'inline-flex',alignItems:'center',gap:'9px',
+      background:'var(--choc-700)',color:'var(--cream-50)',padding:'12px 18px',borderRadius:'var(--radius-pill)',boxShadow:'var(--shadow-md)',border:'1px solid rgba(247,241,230,.18)',
+      fontFamily:'var(--font-label)',fontSize:'12px',fontWeight:700,letterSpacing:'.14em',textTransform:'uppercase',
+      opacity:show?1:0,transform:show?'none':'translateY(10px)',pointerEvents:show?'auto':'none',transition:'opacity .3s var(--ease-standard),transform .3s var(--ease-standard)'}}>
+      <WA size={15}/> Pedir
+    </a>
+  );
+}
+
+function App(){
+  const [lang,setLang]=React.useState('es');
+  return (
+    <div>
+      <Header lang={lang} setLang={setLang}/>
+      <Hero/>
+      <InfoStrip/>
+      <Manifiesto/>
+      <Destacados/>
+      <Historia/>
+      <Artesanal/>
+      <Prueba/>
+      <PrimeraVez/>
+      <Pedido/>
+      <CTA/>
+      <Pie/>
+      <FloatWA/>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

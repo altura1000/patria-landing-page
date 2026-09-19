@@ -1,0 +1,10 @@
+:root{
+  --ease-standard:cubic-bezier(.22,.61,.36,1); /* @kind other */
+  --ease-out-soft:cubic-bezier(.16,.84,.44,1); /* @kind other */
+  --dur-fast:120ms; /* @kind other */
+  --dur-base:220ms; /* @kind other */
+  --dur-slow:420ms; /* @kind other */
+  --dur-reveal:700ms; /* @kind other */
+  --hover-lift:-2px; /* @kind other */
+  --press-scale:.985; /* @kind other */
+}

@@ -1,0 +1,87 @@
+/*
+ * /sabores page.
+ * Un-queried rules = the approved mobile design, unchanged (formerly inline styles).
+ * Tablet (≥640px): same alternating stack, images capped so they don't tower.
+ * Desktop (≥1024px): each flavour becomes a wide alternating photo + caption composition.
+ */
+
+/* ---------- Top bar ---------- */
+.sab-bar{position:sticky;inset-block-start:0;z-index:20;background:rgba(247,241,230,.96);border-block-end:1px solid var(--border-hairline);display:flex;align-items:center;gap:12px;padding:11px var(--pad)}
+.sab-bar__back{color:var(--choc-700);font-size:18px;line-height:1;width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--border-hairline);border-radius:50%}
+.sab-bar__back:hover{color:var(--choc-700)}
+.sab-bar__word{font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:.16em;color:var(--celeste-700)}
+@media (min-width:1024px){
+  .sab-bar{padding-block:16px;gap:16px}
+  .sab-bar__back{width:40px;height:40px;font-size:20px}
+  .sab-bar__word{font-size:22px}
+}
+
+/* ---------- Intro ---------- */
+.sab-intro{padding-block:34px 30px}
+.sab-intro__h1{font-size:38px;font-weight:600;line-height:1;margin-block-start:12px}
+.sab-intro__p{margin:14px 0 0;font-size:16px;color:var(--text-muted);max-width:32ch}
+.sab-intro__note{text-align:start;letter-spacing:.1em;margin-block-start:20px}
+@media (min-width:640px){
+  .sab-intro{padding-block:56px 44px}
+  .sab-intro__h1{font-size:clamp(48px,7vw,64px)}
+  .sab-intro__p{font-size:18px;max-width:36ch}
+  .sab-intro__note{max-width:520px}
+}
+@media (min-width:1024px){
+  .sab-intro{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(48px,6vw,96px);align-items:end;padding-block:clamp(72px,7vw,112px) clamp(56px,5vw,88px)}
+  .sab-intro__h1{font-size:clamp(64px,7vw,104px)}
+  .sab-intro__p{margin-block-start:0}
+  .sab-intro__note{margin-block-start:24px}
+}
+
+/* ---------- One flavour ---------- */
+.flavour{margin-block-end:54px}
+.flavour__img{width:100%;aspect-ratio:4/5;object-fit:cover;margin-inline-start:0}
+.flavour--end .flavour__img{width:86%;aspect-ratio:1/1;margin-inline-start:14%}
+.flavour__card{margin-inline:var(--pad) 46px;margin-block-start:-46px;position:relative;background:var(--cream-100);padding-block:18px 0;padding-inline:0 18px}
+.flavour--end .flavour__card{margin-inline:46px var(--pad);margin-block-start:-58px;padding-inline:18px 0}
+.flavour__num{font-family:var(--font-display);font-size:12px;letter-spacing:.2em;color:var(--gold-600);margin-block-end:8px}
+.flavour__name{font-size:28px;font-weight:600;line-height:1.03}
+.flavour__desc{margin:10px 0 0;font-size:15.5px;line-height:1.55;color:var(--text-muted)}
+.flavour__dots{display:flex;gap:7px;margin-block-start:12px}
+.flavour__buy{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-block-start:14px}
+@media (min-width:640px){
+  .flavour{margin-block-end:72px}
+  .flavour__img,.flavour--end .flavour__img{aspect-ratio:4/3}
+  .flavour__card{margin-inline:var(--gutter) 14%;margin-block-start:-56px;padding-inline:0 24px}
+  .flavour--end .flavour__card{margin-inline:14% var(--gutter);margin-block-start:-64px;padding-inline:24px 0}
+  .flavour__name{font-size:36px}
+  .flavour__desc{font-size:17px}
+}
+@media (min-width:1024px){
+  .flavour{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:end;max-width:calc(var(--content-max) + 2*var(--gutter));margin-inline:auto;padding-inline:var(--gutter);margin-block-end:clamp(88px,8vw,136px)}
+  .flavour__img,.flavour--end .flavour__img{grid-column:1/8;grid-row:1;width:100%;margin:0;aspect-ratio:5/4}
+  .flavour__card,.flavour--end .flavour__card{grid-column:8/13;grid-row:1;margin:0 0 0 -72px;padding:0 0 0 112px;background:transparent}
+  .flavour--end .flavour__img{grid-column:6/13}
+  .flavour--end .flavour__card{grid-column:1/6;margin:0 -72px 0 0;padding:0 112px 0 0}
+  .flavour__num{font-size:14px;margin-block-end:14px}
+  .flavour__name{font-size:clamp(38px,3.4vw,52px)}
+  .flavour__desc{font-size:18px;margin-block-start:16px;max-width:32em}
+  .flavour__dots{margin-block-start:20px;gap:9px}
+  .flavour__buy{margin-block-start:26px;max-width:26em}
+}
+
+/* ---------- Bottom CTA ---------- */
+.sab-cta{background:var(--choc-800);padding:34px var(--pad) 40px;display:grid;gap:16px;justify-items:center;text-align:center}
+.sab-cta__title{font-size:28px;font-weight:600;color:var(--cream-50);line-height:1.05}
+.sab-cta__text{margin:0;font-size:15.5px;color:var(--cream-200);max-width:28ch}
+.sab-cta__btn{width:100%}
+.sab-cta__back{font-family:var(--font-label);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-200);border-bottom:1px solid rgba(247,241,230,.4)}
+.sab-cta__back:hover{color:var(--cream-200)}
+@media (min-width:640px){
+  .sab-cta{padding-block:64px 72px;gap:20px}
+  .sab-cta__title{font-size:clamp(36px,5vw,44px)}
+  .sab-cta__text{font-size:18px;max-width:34ch}
+  .sab-cta__btn{width:auto}
+}
+@media (min-width:1024px){
+  .sab-cta{padding-block:clamp(88px,8vw,128px);gap:24px}
+  .sab-cta__title{font-size:clamp(44px,4vw,60px)}
+  .sab-cta__text{font-size:19px}
+  .sab-cta__back{font-size:12px}
+}

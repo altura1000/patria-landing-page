@@ -1,0 +1,10 @@
+/* PATRIA webfonts — served from Google Fonts CDN.
+   No original brand font binaries were supplied; these are documented substitutions (see readme.md). */
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Assistant:wght@200..800&family=Frank+Ruhl+Libre:wght@300..900&display=swap");
+:root{
+  --font-display:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --font-display-he:"Frank Ruhl Libre","Bodoni Moda",Georgia,serif;
+  --font-body:"Assistant","Helvetica Neue",Helvetica,sans-serif;
+  --font-body-he:"Assistant","Helvetica Neue",sans-serif;
+  --font-label:"Assistant","Helvetica Neue",sans-serif;
+}

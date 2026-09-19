@@ -1,0 +1,75 @@
+:root{
+  /* --- Cream / paper neutrals (primary backgrounds) --- */
+  --cream-50:#FDFAF4;
+  --cream-100:#F7F1E6;
+  --cream-200:#F0E7D8;
+  --cream-300:#E6DAC6;
+  --cream-400:#D8C8AE;
+  --cream-500:#C2AE90;
+
+  /* --- Chocolate browns (primary ink) --- */
+  --choc-900:#231309;
+  --choc-800:#321D0F;
+  --choc-700:#4A2A17;
+  --choc-600:#633A20;
+  --choc-500:#7E4C2C;
+  --choc-400:#9C6942;
+  --choc-300:#B98C63;
+
+  /* --- Dulce de leche (warm caramel) --- */
+  --dulce-600:#A9661F;
+  --dulce-500:#C4832C;
+  --dulce-400:#D79A44;
+  --dulce-300:#E5B573;
+
+  /* --- Argentine blue (logo) --- */
+  --celeste-700:#2E5B8C;
+  --celeste-600:#4A7CB0;
+  --celeste-500:#6C9BC9;
+  --celeste-400:#93B8DB;
+  --celeste-200:#CBDDEE;
+  --navy-900:#16304F;
+
+  /* --- Gold (logo rule / seal) --- */
+  --gold-600:#9C7326;
+  --gold-500:#BE9138;
+  --gold-400:#D4AC5C;
+
+  /* --- Flavour accents (drawn from product photography) --- */
+  --berry:#7A1F38;
+  --pistachio:#8CA83E;
+  --walnut:#C9AE7A;
+  --halva:#E3D2A8;
+
+  /* --- Semantic --- */
+  --bg-page:var(--cream-100);
+  --bg-page-alt:var(--cream-200);
+  --bg-ink:var(--choc-800);
+  --surface-card:var(--cream-50);
+  --surface-raised:#FFFFFF;
+  --surface-sunken:var(--cream-200);
+
+  --text-body:var(--choc-700);
+  --text-strong:var(--choc-900);
+  --text-muted:#7A6450;
+  --text-on-ink:var(--cream-100);
+  --text-on-ink-muted:#C9B49C;
+  --text-link:var(--celeste-700);
+  --text-link-hover:var(--choc-700);
+
+  --border-hairline:rgba(74,42,23,.16);
+  --border-strong:rgba(74,42,23,.38);
+  --border-gold:var(--gold-500);
+  --border-on-ink:rgba(247,241,230,.22);
+
+  --accent-primary:var(--choc-700);
+  --accent-secondary:var(--celeste-700);
+  --accent-highlight:var(--dulce-500);
+
+  --state-success:#4F6B32;
+  --state-warning:var(--dulce-600);
+  --state-error:var(--berry);
+  --state-info:var(--celeste-700);
+
+  --focus-ring:var(--celeste-600);
+}

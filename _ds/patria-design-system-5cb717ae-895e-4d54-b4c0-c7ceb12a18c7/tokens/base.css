@@ -1,0 +1,12 @@
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg-page);color:var(--text-body);font-family:var(--font-body);font-size:var(--fs-body-m);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:var(--fw-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);color:var(--text-strong);margin:0}
+p{margin:0 0 1em;text-wrap:pretty}
+a{color:var(--text-link);text-decoration:none;border-bottom:1px solid rgba(46,91,140,.35);transition:color var(--dur-base) var(--ease-standard),border-color var(--dur-base) var(--ease-standard)}
+a:hover{color:var(--text-link-hover);border-bottom-color:var(--choc-700)}
+img{display:block;max-width:100%}
+[dir="rtl"]{font-family:var(--font-body-he)}
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] h4{font-family:var(--font-display-he);letter-spacing:0}
+.patria-eyebrow{font-family:var(--font-label);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;font-weight:var(--fw-medium);color:var(--dulce-600)}
+.patria-rule{height:1px;background:var(--border-gold);border:0;opacity:.6}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
