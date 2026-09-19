@@ -133,16 +133,16 @@
 
 /* ---------- Manifiesto ---------- */
 .manifiesto{padding-block:44px 40px}
-.manifiesto__text{margin:0;font-family:var(--font-display);font-weight:600;font-size:27px;line-height:1.18;color:var(--choc-700);letter-spacing:-.015em;text-wrap:balance}
+.manifiesto__text{margin:0;font-family:var(--font-statement);font-weight:500;font-size:26px;line-height:1.15;color:var(--choc-700);letter-spacing:-.01em;text-wrap:balance}
 .manifiesto__sig{display:flex;align-items:center;gap:14px;margin-block-start:26px}
 .manifiesto__sig-label{font-family:var(--font-label);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-600)}
 @media (min-width:640px){
   .manifiesto{padding-block:72px 64px}
-  .manifiesto__text{font-size:clamp(32px,4.6vw,42px);line-height:1.14;max-width:24em}
+  .manifiesto__text{font-size:clamp(31px,4.4vw,40px);line-height:1.13;max-width:24em}
 }
 @media (min-width:1024px){
   .manifiesto{padding-block:clamp(88px,8vw,128px)}
-  .manifiesto__text{font-size:clamp(40px,3.7vw,56px);line-height:1.12;max-width:21em}
+  .manifiesto__text{font-size:clamp(38px,3.5vw,52px);line-height:1.1;max-width:21em}
   .manifiesto__sig{margin-block-start:40px}
   .manifiesto__sig-label{font-size:12px}
 }
@@ -150,7 +150,7 @@
 /* ---------- Destacados: "Tres para empezar" ---------- */
 .dest{padding-block:8px 0}
 .dest__head{padding-inline:var(--pad);padding-block-end:22px}
-.dest__title{font-size:34px;font-weight:600;line-height:1.02;margin-block-start:12px}
+.dest__title{font-family:var(--font-statement);font-size:32px;font-weight:600;line-height:1.12;letter-spacing:-.01em;margin-block-start:12px}
 .dest__sub{margin:12px 0 0;font-size:16px;line-height:1.55;color:var(--text-muted);max-width:30ch}
 .dest__media{position:relative}
 .dest__media img{width:100%;aspect-ratio:4/3;object-fit:cover}
@@ -166,7 +166,7 @@
 .dest__foot{padding:26px var(--pad) 48px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 @media (min-width:640px){
   .dest{padding-block-start:32px}
-  .dest__title{font-size:clamp(40px,5.4vw,52px)}
+  .dest__title{font-size:clamp(38px,5vw,48px);line-height:1.1}
   .dest__sub{font-size:18px;max-width:36ch}
   .dest__media img{aspect-ratio:16/10}
   .dest__tab span{font-size:32px}
@@ -180,7 +180,7 @@
   .dest{padding-block:0 clamp(88px,8vw,128px)}
   .dest__inner{display:grid;grid-template-columns:1fr auto;grid-template-areas:"head foot" "row row";align-items:end;row-gap:56px;max-width:calc(var(--content-max) + 2*var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
   .dest__head{grid-area:head;padding:0}
-  .dest__title{font-size:clamp(48px,4.6vw,68px)}
+  .dest__title{font-size:clamp(44px,4.2vw,60px);font-weight:500;line-height:1.08}
   .dest__foot{grid-area:foot;padding:0;flex-wrap:nowrap;gap:28px}
   .dest__row-reveal{grid-area:row}
   .dest__row{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
@@ -194,14 +194,14 @@
 .historia__img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 42%;display:block}
 .historia__panel{background:var(--choc-800);color:var(--text-on-ink);padding:0 var(--pad) 48px;position:relative}
 .historia__seal{display:flex;justify-content:center;margin-block:-38px 22px}
-.historia__title{font-size:32px;font-weight:600;color:var(--cream-50);line-height:1.05}
+.historia__title{font-family:var(--font-statement);font-size:30px;font-weight:600;color:var(--cream-50);line-height:1.12;letter-spacing:-.01em}
 .historia__p1{margin:18px 0 0;font-size:16.5px;line-height:1.62;color:var(--cream-200)}
 .historia__p2{margin:14px 0 0;font-size:16.5px;line-height:1.62;color:var(--text-on-ink-muted)}
 .historia__sig{font-family:var(--font-label);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-400);margin-block-start:26px}
 @media (min-width:640px){
   .historia__img{aspect-ratio:16/10}
   .historia__panel{padding-block-end:80px}
-  .historia__title{font-size:clamp(38px,5vw,46px)}
+  .historia__title{font-size:clamp(36px,4.8vw,44px);line-height:1.1}
   .historia__p1,.historia__p2{font-size:18px;max-width:34em}
 }
 @media (min-width:1024px){
@@ -211,7 +211,7 @@
   .historia__panel{display:flex;flex-direction:column;justify-content:center;padding:clamp(72px,8vw,128px) clamp(56px,7vw,120px) clamp(72px,8vw,128px) clamp(72px,8vw,136px)}
   /* the seal straddles the seam between photo and panel */
   .historia__seal{position:absolute;inset-block-start:clamp(48px,6vw,88px);inset-inline-start:0;margin:0;transform:translateX(-50%) scale(1.3)}
-  .historia__title{font-size:clamp(44px,4vw,60px)}
+  .historia__title{font-size:clamp(40px,3.7vw,54px);font-weight:500;line-height:1.08}
   .historia__p1,.historia__p2{font-size:19px;max-width:30em}
   .historia__p1{margin-block-start:26px}
   .historia__sig{font-size:12px;margin-block-start:36px}
@@ -220,7 +220,7 @@
 /* ---------- Artesanal: "El relleno se ve cuando lo cortás" ---------- */
 .arte{padding-block:56px 52px;position:relative}
 .arte__title{padding-inline:var(--pad)}
-.arte__h2{font-size:30px;font-weight:600;line-height:1.05}
+.arte__h2{font-family:var(--font-statement);font-size:28px;font-weight:600;line-height:1.12;letter-spacing:-.01em}
 .arte__gallery{position:relative;margin-block-start:26px;height:430px}
 .arte__img-a{position:absolute;inset-inline-start:0;inset-block-start:0;width:62%;aspect-ratio:3/4;object-fit:cover}
 .arte__img-b{position:absolute;inset-inline-end:0;inset-block-end:0;width:56%;aspect-ratio:4/5;object-fit:cover;border:6px solid var(--cream-100)}
@@ -232,7 +232,7 @@
 .arte__pt-text{font-size:15px;color:var(--text-muted);line-height:1.5}
 @media (min-width:640px){
   .arte{padding-block:88px 80px}
-  .arte__h2{font-size:clamp(36px,5vw,44px)}
+  .arte__h2{font-size:clamp(34px,4.8vw,42px);line-height:1.1}
   /* same overlapping pair, scaled by aspect ratio instead of a fixed 430px */
   .arte__gallery{height:auto;aspect-ratio:39/43;width:calc(100% - 2*var(--gutter));max-width:600px;margin-inline:auto;margin-block-start:36px}
   .arte__points{margin-block-start:32px}
@@ -243,7 +243,7 @@
 @media (min-width:1024px){
   .arte{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:1fr auto auto 1fr;grid-template-areas:". gallery" "title gallery" "points gallery" ". gallery";column-gap:clamp(56px,7vw,112px);max-width:calc(var(--content-max) + 2*var(--gutter));margin-inline:auto;padding:clamp(96px,9vw,144px) var(--gutter)}
   .arte__title{grid-area:title;padding:0}
-  .arte__h2{font-size:clamp(44px,4.2vw,60px)}
+  .arte__h2{font-size:clamp(40px,3.7vw,54px);font-weight:500;line-height:1.08}
   .arte__gallery{grid-area:gallery;width:100%;max-width:none;margin:0}
   .arte__points{grid-area:points;padding:0;margin-block-start:40px}
   .arte__point{gap:22px;padding-block:20px}
@@ -310,7 +310,7 @@
 
 /* ---------- Pedido: "Tres mensajes y listo" ---------- */
 .pedido{padding-block:52px 46px}
-.pedido__title{font-size:30px;font-weight:600;line-height:1.04;margin-block-start:12px}
+.pedido__title{font-family:var(--font-statement);font-size:28px;font-weight:600;line-height:1.12;letter-spacing:-.01em;margin-block-start:12px}
 .steps{margin-block-start:26px}
 .step{display:flex;gap:18px;align-items:baseline;padding-block:16px;border-block-start:1px solid var(--border-hairline)}
 .step__n{font-family:var(--font-display);font-size:28px;font-weight:600;color:var(--dulce-500);line-height:1}
@@ -319,7 +319,7 @@
 .pedido__note{text-align:start;line-height:1.8;margin-block-start:22px;letter-spacing:.1em}
 @media (min-width:640px){
   .pedido{padding-block:80px 72px}
-  .pedido__title{font-size:clamp(38px,5vw,46px)}
+  .pedido__title{font-size:clamp(36px,4.8vw,44px);line-height:1.1}
   .steps{margin-block-start:36px}
   .step{padding-block:22px}
   .step__n{font-size:34px}
@@ -328,7 +328,7 @@
 }
 @media (min-width:1024px){
   .pedido{padding-block:clamp(88px,8vw,136px)}
-  .pedido__title{font-size:clamp(44px,4.2vw,60px)}
+  .pedido__title{font-size:clamp(40px,3.7vw,54px);font-weight:500;line-height:1.08}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);column-gap:clamp(36px,4.4vw,72px);margin-block-start:56px}
   .step{flex-direction:column;gap:18px;padding-block:30px 0}
   .step__n{font-size:52px}
