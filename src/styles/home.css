@@ -6,9 +6,32 @@
  */
 
 /* ---------- Header (fixed) ---------- */
-.home-header{position:fixed;inset-block-start:0;inset-inline:0;z-index:30;display:flex;align-items:center;gap:10px;padding:12px var(--pad);transition:background .3s var(--ease-standard),border-color .3s}
+.home-header{position:fixed;inset-block-start:0;inset-inline:0;z-index:30;display:flex;align-items:center;gap:10px;padding:12px var(--pad);background:linear-gradient(to bottom,rgba(20,10,4,.5),rgba(20,10,4,0));border-block-end:1px solid transparent;transition:background .3s var(--ease-standard),border-color .3s}
+.home-header--solid{background:rgba(247,241,230,.95);border-block-end-color:var(--border-hairline)}
 .home-header__logo{border-radius:50%;border:1px solid rgba(255,255,255,.35)}
 .home-header__word{font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:.16em;transition:color .3s}
+.home-header .lang-switch{border-color:rgba(247,241,230,.4);background:rgba(20,10,4,.25)}
+.home-header--solid .lang-switch{border-color:var(--border-hairline);background:transparent}
+@media (max-width:639px){
+  /* Slimmer bar; safe-area insets are no-ops unless the page opts into viewport-fit=cover. */
+  .home-header{gap:8px;padding-block:calc(9px + env(safe-area-inset-top,0px)) 9px;padding-inline-start:max(var(--pad),env(safe-area-inset-left,0px));padding-inline-end:max(var(--pad),env(safe-area-inset-right,0px))}
+  /* The 1px transparent bottom border was painting a repeated tile of the gradient's dark
+     start colour (a hard dark hairline). Stretch the gradient over the border box, no tiling. */
+  .home-header{background-origin:border-box;background-repeat:no-repeat}
+  .home-header__logo{width:26px;height:26px}
+  .home-header__word{font-size:16px;letter-spacing:.18em}
+  /* a whisper of shadow keeps cream type legible over the pale wall at the top of the photo */
+  .home-header:not(.home-header--solid) .home-header__word,
+  .home-header:not(.home-header--solid) .lang-switch__btn{text-shadow:0 1px 8px rgba(20,10,4,.4)}
+  /* ES / עב: text-only editorial switch — no box, hairline divider, gold underline on the active language. */
+  .home-header .lang-switch{border:0;border-radius:0;background:transparent;overflow:visible;align-items:center}
+  .home-header .lang-switch__btn{position:relative;padding:4px 11px;font-size:11px;font-weight:600;letter-spacing:.16em;line-height:1;color:rgba(247,241,230,.78);background:transparent;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1.5px;text-underline-offset:6px;transition:color .22s var(--ease-standard),text-decoration-color .22s var(--ease-standard)}
+  .home-header .lang-switch__btn[aria-pressed="true"]{color:var(--cream-50);background:transparent;text-decoration-color:var(--gold-400)}
+  .home-header .lang-switch__btn::before{content:'';position:absolute;inset:-14px -4px} /* ≥44px touch target */
+  .home-header .lang-switch__btn+.lang-switch__btn::after{content:'';position:absolute;inset-inline-start:0;top:50%;width:1px;height:10px;background:currentColor;opacity:.4;transform:translateY(-50%)}
+  .home-header--solid .lang-switch__btn{color:var(--text-muted)}
+  .home-header--solid .lang-switch__btn[aria-pressed="true"]{color:var(--celeste-700);text-decoration-color:var(--celeste-700)}
+}
 @media (min-width:1024px){
   .home-header{padding-block:18px;gap:14px}
   .home-header__logo{width:40px;height:40px}
@@ -25,6 +48,33 @@
 .hero__cta{margin-block-start:2px}
 .hero__down{position:absolute;inset-inline-end:var(--pad);inset-block-end:30px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(247,241,230,.4);display:grid;place-items:center;color:var(--cream-100);font-size:16px}
 .hero__down:hover{color:var(--cream-100)}
+@media (max-width:639px){
+  /* Hero + info strip fill the first screen (55px = strip height); never below 560px or above 820px.
+     The 680px above stays as the fallback for browsers without svh. */
+  .hero{height:clamp(560px,calc(100svh - 55px),820px)}
+  /* Taller hero = the photo is scaled by height, so the horizontal window narrows; 44% keeps roughly the
+     same slice of the picture as before (both halves + the "RIA" of the sticker) instead of a stray sliver. */
+  .hero__img{object-position:44% 50%}
+  /* slightly firmer darkening low in the frame so the raised headline stays readable */
+  .hero__scrim{background:linear-gradient(to top,rgba(18,9,3,.84) 0%,rgba(18,9,3,.5) 24%,rgba(18,9,3,.14) 46%,rgba(18,9,3,0) 66%)}
+  /* Headline up, CTA down: explicit spacing instead of a uniform 16px grid gap. */
+  .hero__body{inset-inline-start:max(var(--pad),env(safe-area-inset-left,0px));inset-inline-end:max(var(--pad),env(safe-area-inset-right,0px));inset-block-end:calc(26px + env(safe-area-inset-bottom,0px));gap:0}
+  .hero__tag{margin-block-start:22px;text-wrap:balance}
+  .hero__cta{margin-block-start:30px}
+  /* Down arrow: soft translucent disc + hairline arrow, vertically centred on the CTA. */
+  .hero__down{inset-inline-end:max(var(--pad),env(safe-area-inset-right,0px));inset-block-end:calc(33px + env(safe-area-inset-bottom,0px));width:40px;height:40px;border:0;background:rgba(247,241,230,.16);box-shadow:inset 0 0 0 1px rgba(247,241,230,.22);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-size:0;transition:background .22s var(--ease-standard)}
+  .hero__down:hover{background:rgba(247,241,230,.26)}
+  .hero__down:active{background:rgba(247,241,230,.34)}
+  .hero__down::before{content:'';position:absolute;inset:0;margin:auto;width:16px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23FDFAF4' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2.5v10.5M3.5 8.5 8 13l4.5-4.5'/%3E%3C/svg%3E") center/contain no-repeat}
+  .hero__down::after{content:'';position:absolute;inset:-4px} /* 48px touch target */
+}
+@media (max-width:359px){
+  .hero__tag{font-size:10px;letter-spacing:.18em}
+}
+@media (max-width:639px) and (prefers-reduced-motion:no-preference){
+  .hero__down::before{animation:hero-nudge 2.8s ease-in-out infinite}
+}
+@keyframes hero-nudge{0%,55%,100%{transform:translateY(0)}28%{transform:translateY(3px)}}
 @media (min-width:640px){
   .hero{height:clamp(680px,84svh,900px)}
   .hero__title{font-size:clamp(56px,8.6vw,84px)}
@@ -49,6 +99,13 @@
 .info-strip{background:var(--cream-200);border-block-end:1px solid var(--border-hairline);padding:12px 14px;display:grid;grid-template-columns:repeat(3,1fr);align-items:center}
 .info-strip__item{font-family:var(--font-label);font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--choc-600);text-align:center;line-height:1.35;padding-inline:8px}
 .info-strip__item+.info-strip__item{border-inline-start:1px solid var(--gold-500)}
+@media (max-width:639px){
+  /* Each message sits on two even lines (Hechos / a mano · Pedidos en / Tel Aviv · Entrega / hasta 48h),
+     so it never wraps mid-phrase, and can use a larger, more legible size. */
+  .info-strip{padding:12px 4px}
+  .info-strip__item{font-size:10.5px;letter-spacing:.14em;line-height:1.45;padding-inline:6px}
+  .info-strip__item>span{display:block}
+}
 @media (min-width:640px){
   .info-strip{padding-block:16px;padding-inline:var(--pad)}
   .info-strip__item{font-size:11.5px;letter-spacing:.14em}

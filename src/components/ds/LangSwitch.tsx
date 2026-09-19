@@ -1,9 +1,9 @@
 import type { CSSProperties } from 'react'
 import type { Lang } from '../../i18n/LanguageContext'
 
-const OPTIONS: { id: Lang; label: string }[] = [
-  { id: 'es', label: 'ES' },
-  { id: 'he', label: 'עב' },
+const OPTIONS: { id: Lang; label: string; name: string }[] = [
+  { id: 'es', label: 'ES', name: 'Español' },
+  { id: 'he', label: 'עב', name: 'עברית' },
 ]
 
 interface LangSwitchProps {
@@ -12,34 +12,19 @@ interface LangSwitchProps {
   style?: CSSProperties
 }
 
+/** Look lives in styles/global.css (.lang-switch); the home header refines it on mobile. */
 export default function LangSwitch({ lang = 'es', onChange = () => {}, style }: LangSwitchProps) {
   return (
-    <div
-      style={{
-        display: 'inline-flex',
-        border: '1px solid var(--border-hairline)',
-        borderRadius: 'var(--radius-sm)',
-        overflow: 'hidden',
-        ...style,
-      }}
-    >
+    <div className="lang-switch" role="group" aria-label="Idioma" style={style}>
       {OPTIONS.map((o) => (
         <button
           key={o.id}
           type="button"
+          className="lang-switch__btn"
           aria-pressed={lang === o.id}
+          aria-label={o.name}
+          lang={o.id}
           onClick={() => onChange(o.id)}
-          style={{
-            padding: '7px 14px',
-            border: 0,
-            cursor: 'pointer',
-            fontFamily: 'var(--font-label)',
-            fontSize: '12px',
-            fontWeight: 700,
-            letterSpacing: '.08em',
-            background: lang === o.id ? 'var(--celeste-700)' : 'transparent',
-            color: lang === o.id ? 'var(--cream-50)' : 'var(--text-muted)',
-          }}
         >
           {o.label}
         </button>

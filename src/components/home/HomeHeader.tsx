@@ -17,15 +17,8 @@ export default function HomeHeader() {
   }, [])
   const ink = solid ? 'var(--celeste-700)' : 'var(--cream-50)'
   return (
-    <header
-      className="home-header"
-      style={{
-        background: solid
-          ? 'rgba(247,241,230,.95)'
-          : 'linear-gradient(to bottom,rgba(20,10,4,.5),rgba(20,10,4,0))',
-        borderBlockEnd: solid ? '1px solid var(--border-hairline)' : '1px solid transparent',
-      }}
-    >
+    // Transparent/solid colours live in styles/home.css (.home-header / .home-header--solid).
+    <header className={solid ? 'home-header home-header--solid' : 'home-header'}>
       <img
         className="home-header__logo"
         src={images.logoEmblem}
@@ -38,14 +31,7 @@ export default function HomeHeader() {
         PATRIA
       </span>
       <div style={{ marginInlineStart: 'auto' }}>
-        <LangSwitch
-          lang={lang}
-          onChange={setLang}
-          style={{
-            borderColor: solid ? 'var(--border-hairline)' : 'rgba(247,241,230,.4)',
-            background: solid ? 'transparent' : 'rgba(20,10,4,.25)',
-          }}
-        />
+        <LangSwitch lang={lang} onChange={setLang} />
       </div>
     </header>
   )

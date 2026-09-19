@@ -35,6 +35,11 @@ a:hover{color:var(--choc-700)}
 .waminor:hover{background:rgba(74,42,23,.06);color:var(--choc-900)}
 .price{display:inline-block;font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--dulce-600);border-bottom:1px dashed rgba(169,102,31,.55);line-height:1.2;padding-block-end:2px;unicode-bidi:isolate}
 
+/* ES / עב language switch (the approved segmented look; the home header refines it on mobile) */
+.lang-switch{display:inline-flex;border:1px solid var(--border-hairline);border-radius:var(--radius-sm);overflow:hidden}
+.lang-switch__btn{padding:7px 14px;border:0;cursor:pointer;font-family:var(--font-label);font-size:12px;font-weight:700;letter-spacing:.08em;background:transparent;color:var(--text-muted)}
+.lang-switch__btn[aria-pressed="true"]{background:var(--celeste-700);color:var(--cream-50)}
+
 @media (min-width:1024px){
   .wabtn{font-size:14px;padding:18px 32px}
   .waminor{font-size:12px;padding:12px 18px}
