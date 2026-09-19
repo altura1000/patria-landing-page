@@ -133,16 +133,16 @@
 
 /* ---------- Manifiesto ---------- */
 .manifiesto{padding-block:44px 40px}
-.manifiesto__text{margin:0;font-family:var(--font-display);font-size:27px;line-height:1.22;color:var(--choc-700);letter-spacing:-.01em}
+.manifiesto__text{margin:0;font-family:var(--font-display);font-weight:600;font-size:27px;line-height:1.18;color:var(--choc-700);letter-spacing:-.015em;text-wrap:balance}
 .manifiesto__sig{display:flex;align-items:center;gap:14px;margin-block-start:26px}
 .manifiesto__sig-label{font-family:var(--font-label);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-600)}
 @media (min-width:640px){
   .manifiesto{padding-block:72px 64px}
-  .manifiesto__text{font-size:clamp(32px,4.6vw,40px);max-width:24em}
+  .manifiesto__text{font-size:clamp(32px,4.6vw,42px);line-height:1.14;max-width:24em}
 }
 @media (min-width:1024px){
   .manifiesto{padding-block:clamp(88px,8vw,128px)}
-  .manifiesto__text{font-size:clamp(40px,3.7vw,58px);line-height:1.16;max-width:21em}
+  .manifiesto__text{font-size:clamp(40px,3.7vw,56px);line-height:1.12;max-width:21em}
   .manifiesto__sig{margin-block-start:40px}
   .manifiesto__sig-label{font-size:12px}
 }

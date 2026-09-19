@@ -22,7 +22,7 @@ export default function FloatingOrderButton() {
     <WhatsAppLink
       message={WA_MESSAGES.order}
       className="float-order"
-      aria-label="Pedir por WhatsApp"
+      aria-label="Quiero probar, por WhatsApp"
       aria-hidden={!show}
       tabIndex={show ? 0 : -1}
       style={{
@@ -31,7 +31,7 @@ export default function FloatingOrderButton() {
         pointerEvents: show ? 'auto' : 'none',
       }}
     >
-      <WhatsAppIcon size={15} /> Pedir
+      <WhatsAppIcon size={15} /> Quiero probar
     </WhatsAppLink>
   )
 }
