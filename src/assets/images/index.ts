@@ -9,6 +9,8 @@ import clasico from './clasico.png'
 import client1 from './client1.png'
 import client2 from './client2.png'
 import client3 from './client3.png'
+import client4 from './client4.png'
+import client5 from './client5.png'
 import frutosRojos from './frutos-rojos.png'
 import halva from './halva.png'
 import heroBonbon from './hero-bonbon.png'
@@ -27,6 +29,8 @@ export const images = {
   client1,
   client2,
   client3,
+  client4,
+  client5,
   frutosRojos,
   halva,
   heroBonbon,

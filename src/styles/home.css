@@ -264,15 +264,18 @@
 .insta__label{padding:0 var(--pad) 10px;font-family:var(--font-label);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--choc-600)}
 .insta__grid{display:flex;gap:10px;overflow-x:auto;padding-inline:var(--pad);scroll-padding-inline:var(--pad);scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .insta__grid::-webkit-scrollbar{display:none}
-.insta__story{flex:0 0 clamp(132px,40vw,200px);width:clamp(132px,40vw,200px);height:auto;display:block;scroll-snap-align:start;border-radius:var(--radius-sm)}
+/* Every Story card is the same box (ratio 567:1000 = the average of the screenshots); each image is contained in it, never cropped or stretched.
+   The backing colour only shows in the 1-3px sliver left by the screenshots that are a touch wider/narrower. */
+.insta__story{flex:0 0 clamp(132px,40vw,200px);width:clamp(132px,40vw,200px);height:auto;aspect-ratio:567/1000;object-fit:contain;background:var(--choc-800);display:block;scroll-snap-align:start;border-radius:var(--radius-sm)}
 @media (min-width:640px){
   .prueba{padding-block:64px 56px}
   .prueba__title{font-size:36px}
   .prueba .rail{grid-template-columns:333fr 353fr;gap:20px;max-width:calc(706px + 2*var(--pad));justify-items:stretch}
   .review__shot{width:100%}
   .insta{margin-block-start:44px}
-  .insta__grid{display:grid;grid-template-columns:repeat(3,minmax(0,220px));gap:14px;overflow:visible;scroll-snap-type:none}
-  .insta__story{width:100%}
+  /* Five Stories: a snap scroller (like mobile) instead of a 3-column grid. Card width = the old grid column: 3 across, max 220px. */
+  .insta__grid{--story-w:min(220px,calc((100% - 28px)/3));align-items:flex-start;gap:14px;padding-block:14px 22px;margin-block:-14px -22px}
+  .insta__story{flex:0 0 var(--story-w);width:var(--story-w)}
 }
 @media (min-width:1024px){
   .prueba{padding-block:clamp(88px,8vw,128px)}
@@ -285,7 +288,11 @@
   .review__shot,.insta__story{box-shadow:0 4px 16px rgba(40,20,10,.07)}
   .insta{grid-area:insta;margin:0}
   .insta__label{padding-inline:0}
-  .insta__grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding-inline:0}
+  /* Same card width as the old 3-column grid ((column - 2 gaps) / 3). The 8px side padding/negative margin pair only gives the shadows room
+     inside the scroller (kept under the 10px gap so no sliver of the next card shows beside the third). */
+  .insta__grid{--story-w:calc((100% - 20px)/3);gap:10px;margin-inline:-8px;padding-inline:8px;scroll-padding-inline:8px;scrollbar-width:thin;scrollbar-color:rgba(74,42,23,.28) transparent}
+  .insta__grid::-webkit-scrollbar{display:block;height:6px}
+  .insta__grid::-webkit-scrollbar-thumb{background:rgba(74,42,23,.28);border-radius:3px}
 }
 @media (min-width:1280px){
   /* Wider row so the message screenshots can be large. The Stories column keeps exactly the width it had in the

@@ -23,7 +23,7 @@ export default function Prueba() {
         <div className="insta">
           <div className="insta__label">{t.instaLabel}</div>
           <div className="insta__grid">
-            {[images.client1, images.client2, images.client3].map((src, i) => (
+            {[images.client1, images.client2, images.client3, images.client4, images.client5].map((src, i) => (
               <img key={i} className="insta__story" src={src} alt={`${t.instaLabel} ${i + 1}`} width={540} height={950} loading="lazy" decoding="async" />
             ))}
           </div>
