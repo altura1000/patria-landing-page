@@ -201,7 +201,7 @@ const he: Copy = {
     // "Como los de allá" — literal: "like the ones from Argentina".  // REVIEW (headline)
     title: ['כמו אלה', 'שבארגנטינה.'],
     tag: 'אלפחורס ארגנטינאי · בעבודת יד', // from the design-system kit ("אלפחורס ארגנטינאי, בעבודת יד")
-    cta: 'להזמין אלפחורס', // REVIEW
+    cta: 'אני רוצה לטעום', // REVIEW
     downLabel: 'לצפייה בטעמים', // REVIEW
   },
   info: [
