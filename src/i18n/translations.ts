@@ -70,10 +70,11 @@ export interface Copy {
   cta: { imgAlt: string; title: string; text: string; button: string; placeholder: string }
   footer: { eyebrow: string; text: string; follow: string; label: string }
   floating: { label: string; aria: string }
+  /** Pre-filled WhatsApp text of every "Quiero probar" / "אני רוצה לטעום" button (see components/TryWhatsAppLink). */
+  whatsapp: { tryMessage: string }
   sabores: {
     backLabel: string
-    intro: { eyebrow: string; title: Lines; text: string; note: string }
-    buy: string
+    intro: { eyebrow: string; title: Lines; text: string }
     cta: { title: string; text: string; button: string; back: string }
   }
 }
@@ -85,7 +86,7 @@ const es: Copy = {
     imgAlt: 'Alfajor Bon Bon cortado al medio, con el dulce de leche a la vista',
     title: ['Como los', 'de allá.'],
     tag: 'Alfajores argentinos · hechos a mano',
-    cta: 'Pedir alfajores',
+    cta: 'Quiero probar',
     downLabel: 'Ver los sabores',
   },
   info: [
@@ -175,15 +176,14 @@ const es: Copy = {
     label: 'PATRIA · Orgullo argentino',
   },
   floating: { label: 'Quiero probar', aria: 'Quiero probar, por WhatsApp' },
+  whatsapp: { tryMessage: 'Hola PATRIA 🤎 Me tentaron… quiero probar sus alfajores. ¿Me ayudan a elegir?' },
   sabores: {
     backLabel: 'Volver',
     intro: {
       eyebrow: 'La carta completa',
       title: ['Los ocho', 'sabores.'],
       text: 'Todos se cortan igual de generosos. Elegí el tuyo y escribinos.',
-      note: 'Precios por unidad y por caja — a confirmar',
     },
-    buy: 'Pedir este',
     cta: {
       title: '¿No sabés cuál?',
       text: 'Contanos qué te gusta y te armamos la caja.',
@@ -292,15 +292,14 @@ const he: Copy = {
     label: 'PATRIA · גאווה ארגנטינאית', // from the kit
   },
   floating: { label: 'אני רוצה לטעום', aria: 'אני רוצה לטעום, בוואטסאפ' }, // REVIEW
+  whatsapp: { tryMessage: 'היי PATRIA 🤎 עשיתם לי חשק… אני רוצה לטעום 😋 תעזרו לי לבחור?' },
   sabores: {
     backLabel: 'חזרה', // from the kit ("חזרה")
     intro: {
       eyebrow: 'התפריט המלא', // REVIEW
       title: ['שמונה', 'טעמים.'], // REVIEW
       text: 'כולם נחתכים באותה נדיבות. בחרו את הטעם שלכם וכתבו לנו.', // REVIEW
-      note: 'מחירים ליחידה ולקופסה — לאישור', // placeholder
     },
-    buy: 'להזמין את זה', // REVIEW
     cta: {
       title: 'לא בטוחים איזה לבחור?', // REVIEW
       text: 'ספרו לנו מה אתם אוהבים ונרכיב לכם קופסה.', // REVIEW

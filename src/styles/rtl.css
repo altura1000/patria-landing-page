@@ -56,6 +56,13 @@
 /* Destacados: the cream label notch on the main photo (padding was 18px right / 22px left, on a notch sitting at the left edge). */
 [dir="rtl"] .dest__tab{padding:12px 22px 0 18px}
 
+/* Floating order button: `inset-inline-end` would put it bottom-left in RTL. Keep it bottom-right, as in Spanish,
+   at the same edge distance (18px, --gutter from 1024px). The safe-area inset is a no-op without viewport-fit=cover. */
+[dir="rtl"] .float-order{inset-inline-end:auto;inset-inline-start:max(18px,env(safe-area-inset-right,0px))}
+@media (min-width:1024px){
+  [dir="rtl"] .float-order{inset-inline-start:max(var(--gutter),env(safe-area-inset-right,0px))}
+}
+
 @media (min-width:1024px){
   /* Historia: the panel now sits left of the photo. Wider padding goes on the seam side (right), and the
      seal — centred on the seam by translateX(-50%) in LTR — needs the opposite offset. */

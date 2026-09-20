@@ -1,27 +1,22 @@
 /**
  * WhatsApp ordering configuration — the ONE place to edit.
  *
- * Every "Pedir…" / "Hacer mi pedido" / "Quiero probarlos" button and the floating
- * PEDIR button build their link through `whatsappUrl()` below.
+ * Every WhatsApp button builds its link through `whatsappUrl()` below. The "Quiero probar" /
+ * "אני רוצה לטעום" buttons go through components/TryWhatsAppLink, whose per-language message is
+ * `whatsapp.tryMessage` in i18n/translations.ts.
  */
 
 /**
  * PATRIA's WhatsApp number, international format, digits only (no "+", spaces or dashes).
- * Example for an Israeli mobile: '972501234567'.
- *
- * TODO: insert the real PATRIA number. While it is empty the links open
- * `https://wa.me/?text=…` (WhatsApp with the message pre-filled, no recipient) —
- * exactly what the approved HTML did.
+ * Never shown to visitors; it is only used to build the wa.me link.
  */
-export const WHATSAPP_PHONE = ''
+export const WHATSAPP_PHONE = '972553197848'
 
 export const whatsappUrl = (text: string): string =>
   `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`
 
-/** Pre-filled order messages (Spanish, as in the approved design). */
+/** Pre-filled messages for the remaining order buttons (Spanish, as in the approved design). */
 export const WA_MESSAGES = {
-  heroOrder: '¡Hola PATRIA! Quiero pedir alfajores.',
-  firstTime: '¡Hola PATRIA! Es mi primera vez. Quiero probar el Clásico, el Bon Bon y el de Halva.',
   order: '¡Hola PATRIA! Quiero hacer un pedido.',
   assortedBox: '¡Hola PATRIA! Quiero armar una caja surtida.',
   flavour: (name: string): string =>

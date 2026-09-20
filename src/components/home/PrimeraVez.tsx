@@ -1,9 +1,8 @@
-import { WA_MESSAGES } from '../../config/whatsapp'
 import { useCopy } from '../../i18n/LanguageContext'
 import Eyebrow from '../ds/Eyebrow'
 import FlavourDot, { type FlavourKey } from '../ds/FlavourDot'
+import TryWhatsAppLink from '../TryWhatsAppLink'
 import WhatsAppIcon from '../WhatsAppIcon'
-import WhatsAppLink from '../WhatsAppLink'
 
 /** Dot colour per favourite, in the same order as `primera.favourites` in i18n/translations.ts. */
 const FAVOURITE_DOTS: FlavourKey[] = ['chocolate', 'dulce', 'halva']
@@ -26,9 +25,9 @@ export default function PrimeraVez() {
             </span>
           ))}
         </div>
-        <WhatsAppLink message={WA_MESSAGES.firstTime} className="wabtn primera__cta">
+        <TryWhatsAppLink className="wabtn primera__cta">
           <WhatsAppIcon /> {t.cta}
-        </WhatsAppLink>
+        </TryWhatsAppLink>
       </div>
     </section>
   )

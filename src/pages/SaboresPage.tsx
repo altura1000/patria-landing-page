@@ -7,8 +7,10 @@ import { useCopy } from '../i18n/LanguageContext'
 import Lines from '../i18n/Lines'
 import Eyebrow from '../components/ds/Eyebrow'
 import Seal from '../components/ds/Seal'
+import FloatingOrderButton from '../components/home/FloatingOrderButton'
 import FlavourArticle from '../components/sabores/FlavourArticle'
 import SaboresBar from '../components/sabores/SaboresBar'
+import TryWhatsAppLink from '../components/TryWhatsAppLink'
 import WhatsAppIcon from '../components/WhatsAppIcon'
 import WhatsAppLink from '../components/WhatsAppLink'
 
@@ -28,12 +30,16 @@ export default function SaboresPage() {
         </div>
         <div>
           <p className="sab-intro__p">{t.intro.text}</p>
-          <div className="ph sab-intro__note">{t.intro.note}</div>
         </div>
       </div>
       {FLAVOURS.map((f, i) => (
         <FlavourArticle key={f.id} flavour={f} index={i} />
       ))}
+      <div id="sab-order" className="sab-order">
+        <TryWhatsAppLink className="wabtn sab-order__btn">
+          <WhatsAppIcon /> {copy.floating.label}
+        </TryWhatsAppLink>
+      </div>
       <div className="sab-cta">
         <Seal size={64} src={images.logoEmblem} rotate={-5} />
         <h2 className="sab-cta__title">{t.cta.title}</h2>
@@ -54,6 +60,7 @@ export default function SaboresPage() {
           {t.cta.back}
         </Link>
       </div>
+      <FloatingOrderButton fromTop endId="sab-order" />
     </div>
   )
 }
