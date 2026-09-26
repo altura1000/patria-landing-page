@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import LangSwitch from '../ds/LangSwitch'
 import { useCopy, useLanguage } from '../../i18n/LanguageContext'
 
-/** Top bar of /sabores: back arrow to the homepage, wordmark, ES/HE control. */
+/** Top bar of /sabores and /privacy: back arrow to the homepage, wordmark, ES/HE control. */
 export default function SaboresBar() {
   const { lang, setLang } = useLanguage()
   const { ui, sabores } = useCopy()

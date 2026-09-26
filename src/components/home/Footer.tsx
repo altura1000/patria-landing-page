@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { images } from '../../assets/images'
 import { INSTAGRAM_URL } from '../../config/site'
 import { useCopy } from '../../i18n/LanguageContext'
@@ -17,7 +18,12 @@ export default function Footer() {
       </div>
       <div className="footer__bar">
         <Seal size={38} src={images.logoSeal} rotate={0} shadow={false} />
-        <span className="footer__bar-label">{t.label}</span>
+        <div className="footer__bar-text">
+          <span className="footer__bar-label">{t.label}</span>
+          <Link to="/privacy" className="footer__legal">
+            {t.privacy}
+          </Link>
+        </div>
       </div>
     </footer>
   )

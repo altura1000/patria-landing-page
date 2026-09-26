@@ -412,6 +412,9 @@
 .footer__ig-link{font-family:var(--font-label);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid currentColor;justify-self:start;margin-block-start:4px}
 .footer__bar{border-block-start:1px solid var(--border-hairline);padding:18px var(--pad) 76px;display:flex;align-items:center;gap:12px}
 .footer__bar-label{font-family:var(--font-label);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.footer__bar-text{display:grid;gap:6px;justify-items:start}
+.footer__legal{font-family:var(--font-label);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);border-bottom:1px solid rgba(122,100,80,.4)}
+.footer__legal:hover{color:var(--choc-700)}
 @media (min-width:640px){
   .footer__ig-text{font-size:20px}
 }
@@ -420,7 +423,7 @@
   .footer__ig{padding:0}
   .footer__ig-text{font-size:22px}
   .footer__bar{border:0;padding:0}
-  .footer__bar-label{font-size:11px}
+  .footer__bar-label,.footer__legal{font-size:11px}
 }
 
 /* ---------- Floating PEDIR button ---------- */

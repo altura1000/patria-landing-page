@@ -18,8 +18,9 @@ npm run preview
 | ---------- | -------------------------------------- | -------------------------------- |
 | `/`        | Homepage                               | `PATRIA Home Mobile.html`        |
 | `/sabores` | All eight flavours                     | `PATRIA Sabores Mobile.html`     |
+| `/privacy` | Privacy policy (ES/HE)                 | copy in `src/i18n/translations.ts` |
 
-Unknown paths redirect to `/`. When deploying, the host needs an SPA fallback (serve `index.html` for every path) so `/sabores` works on refresh.
+Unknown paths redirect to `/`. When deploying, the host needs an SPA fallback (serve `index.html` for every path) so `/sabores` and `/privacy` work on refresh.
 
 ## Things you will want to edit
 
